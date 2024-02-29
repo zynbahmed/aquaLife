@@ -36,13 +36,17 @@ Marine Paradise in this website, our focus is to allow user to experince the bes
 #### **_Screenshot_**
 
 The ERD of the project consisting of 4 models
-[!image](ERD.png)
+
+![ERD](https://github.com/zynbahmed/aquaLife/assets/155875082/cc188cd2-a8fb-4886-b2b0-e66b00c027cb)
+
 
 The CHD of the react front-end displaying the pages and the components for each element that is going to be used
-[!image](image.png)
+
+
+![image](https://github.com/zynbahmed/aquaLife/assets/155875082/85643c11-4e99-47ec-9df9-519041a4fd54)
 
 ### **_WireFrame_**
+![wireframe](https://github.com/zynbahmed/aquaLife/assets/155875082/3cc95104-9223-4d92-afe6-833633d8ad9a)
 
-[!image](wireframe.png)
 
 #### **_HomePage_**
