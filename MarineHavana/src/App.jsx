@@ -6,6 +6,7 @@ import Registeration from './pages/Registeration'
 import Activities from './pages/Activities'
 import './App.css'
 import Profile from './pages/Profile'
+import Login from './pages/Login'
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/Activities" element={<Activities />} />
           <Route path="/Registeration" element={<Registeration />} />
           <Route path="/Profile" element={<Profile />} />
+          <Route path="Login" element={<Login/>} />
         </Routes>
       </main>
     </div>

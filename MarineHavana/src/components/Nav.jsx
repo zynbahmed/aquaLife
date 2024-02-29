@@ -11,6 +11,7 @@ const Nav = () => {
         <NavLink to='/Activities'>Activities</NavLink>  
         <NavLink to='/Registeration'>Registeration</NavLink>
         <NavLink to='/Profile'>Profile</NavLink>
+        <NavLink to='/Login'>Login</NavLink>
       </div>
     </nav>
     </header>
