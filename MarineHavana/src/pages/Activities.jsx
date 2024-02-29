@@ -1,10 +1,35 @@
+import { useState } from 'react'
+import Surface from '../components/Surface'
+import Underwater from '../components/Underwater'
+import Activity from '../components/Activity'
+
 const Activities = () => {
+  const [surface, setSurface] = useState(false)
+  const [under, setUnder] = useState(false)
+
+  const handleClickSur = () => {
+    setSurface(true)
+    setUnder(false)
+  }
+  const handleClickUn = () => {
+    setUnder(true)
+    setSurface(false)
+  }
+
+  const activityChooser = () => {
+    if (surface) {
+      return <Surface />
+    } else if (under) {
+      return <Underwater />
+    }
+  }
 
   return (
     <div>
-<main><h2>
-Want to explore one of the largest and most stunning aquariums in the world? Don’t miss the giant 10 million-litre tank at Dubai Aquarium and Underwater Zoo, which contains more than 33,000 aquatic animals and the largest collection of sand tiger sharks anywhere. 
-  </h2></main>
+      <h1>Activities</h1>
+      <button onClick={handleClickSur}>Surface</button>
+      <button onClick={handleClickUn}>Underwater</button>
+      {activityChooser()}
     </div>
   )
 }

@@ -7,27 +7,22 @@ import Activities from './pages/Activities'
 import './App.css'
 import Profile from './pages/Profile'
 
-
 const App = () => {
   return (
-
     <div>
       <header>
-        <Nav/>
+        <Nav />
       </header>
-<main>
+      <main>
         <Routes>
-          <Route path="/" element={ <Home /> } />
-          <Route path="/About" element={ <About /> } />
-          <Route path="/Activities" element={ <Activities /> } />  
-          <Route path="/Registeration" element={ <Registeration /> } />
-          <Route path="/Profile" element={ <Profile /> } />
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Activities" element={<Activities />} />
+          <Route path="/Registeration" element={<Registeration />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
-</main>
+      </main>
     </div>
-
-
-    
   )
 }
 
