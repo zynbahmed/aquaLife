@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Home from './pages/Home'
 import About from './pages/About'
+import Registeration from './pages/Registeration'
 import Activities from './pages/Activities'
 import './App.css'
 
@@ -17,7 +18,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={ <Home /> } />
           <Route path="/About" element={ <About /> } />
-          <Route path="/Activities" element={ <Activities /> } />
+          <Route path="/Activities" element={ <Activities /> } />  
+          <Route path="/Registeration" element={ <Registeration /> } />
         </Routes>
 </main>
     </div>
