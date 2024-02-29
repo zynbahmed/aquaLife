@@ -7,7 +7,7 @@ const Profiles = (props) => {
       >
         <img
           className="profile-img"
-          src="public/images/profile.webp"
+          // src="public/images/profile.webp"
           alt="user"
         />
         <h2 className="name">

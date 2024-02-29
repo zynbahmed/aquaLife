@@ -5,6 +5,7 @@ import About from './pages/About'
 import Registeration from './pages/Registeration'
 import Activities from './pages/Activities'
 import './App.css'
+import Profile from './pages/Profile'
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="/About" element={ <About /> } />
           <Route path="/Activities" element={ <Activities /> } />  
           <Route path="/Registeration" element={ <Registeration /> } />
+          <Route path="/Profile" element={ <Profile /> } />
         </Routes>
 </main>
     </div>
