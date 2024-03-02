@@ -1,6 +1,6 @@
 const Home = () => {
   return (
-    <div>
+    <div className="container">
       <main>
         <h2>
           one of the largest and most stunning aquariums in the world? Don’t
