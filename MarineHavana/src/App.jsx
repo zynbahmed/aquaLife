@@ -12,7 +12,8 @@ const App = () => {
   return (
     <div>
       <header>
-        <Nav />
+         <Nav />
+         
       </header>
       <main>
         <Routes>
