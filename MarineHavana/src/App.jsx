@@ -7,12 +7,36 @@ import Activities from './pages/Activities'
 import './App.css'
 import Profile from './pages/Profile'
 import Login from './pages/Login'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import CreateActivity from './pages/CreateActivity'
 import surfaceAct from './data/surface'
 import ActivityDetails from './components/ActivityDetails'
 
+import { CheckSession } from './services/Auth'
+
+
 const App = () => {
+  const [user, setUser] = useState(null)
+
+  const checkToken = async () => {
+    const user = await CheckSession()
+    setUser(user)
+  }
+
+  const handleLogOut = () => {
+    //Reset all auth related state and clear localStorage
+    setUser(null)
+    localStorage.clear()
+  }
+
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      checkToken()
+    }
+  }, [])
+
+
   let nav = useNavigate()
   const [surfaces, setSurfaces] = useState(surfaceAct)
   const [newSurface, setNewSurface] = useState({
@@ -48,7 +72,8 @@ const App = () => {
   return (
     <div>
       <header>
-         <Nav />
+         <Nav user={user}
+        handleLogOut={handleLogOut} />
          
       </header>
       <main>
@@ -58,7 +83,7 @@ const App = () => {
           <Route path="/Activities" element={<Activities />} />
           <Route path="/register" element={<Registeration />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/login" element={<Login/>} />
+          <Route path="/login" element={<Login setUser={setUser}/>} />
           <Route
             path="/Activities/:id"
             element={<ActivityDetails surfaces={surfaces} />}
