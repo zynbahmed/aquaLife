@@ -12,7 +12,6 @@ const Nav = () => {
   } else if (location.pathname === '/Activities') {
     navbarClass = 'activities-navbar';
   }
-
   return (
     <header>
       <nav className="header">
@@ -23,6 +22,7 @@ const Nav = () => {
           <NavLink to="/Registeration" className={`nav-link ${navbarClass}`}>Registration</NavLink>
           <NavLink to="/Profile" className={`nav-link ${navbarClass}`}>Profile</NavLink>
           <NavLink to="/Login" className={`nav-link ${navbarClass}`}>Login</NavLink>
+          <NavLink to="/creategame" className={`nav-link ${navbarClass}`}>game</NavLink>
         </div>
       </nav>
     </header>

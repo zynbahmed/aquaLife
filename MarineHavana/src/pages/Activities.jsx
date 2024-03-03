@@ -1,35 +1,31 @@
 import { useState } from 'react'
-import Surface from '../components/Surface'
-import Underwater from '../components/Underwater'
-import Activity from '../components/Activity'
+import surfaceAct from '../data/surface'
+import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Activities = () => {
-  const [surface, setSurface] = useState(false)
-  const [under, setUnder] = useState(false)
+  let nav = useNavigate()
+  const [surfaces, setSurfaces] = useState(surfaceAct)
 
-  const handleClickSur = () => {
-    setSurface(true)
-    setUnder(false)
-  }
-  const handleClickUn = () => {
-    setUnder(true)
-    setSurface(false)
-  }
-
-  const activityChooser = () => {
-    if (surface) {
-      return <Surface />
-    } else if (under) {
-      return <Underwater />
-    }
+  const handleCreate = () => {
+    nav('/creategame')
   }
 
   return (
     <div>
-      <h1>Activities</h1>
-      <button onClick={handleClickSur}>Surface</button>
-      <button onClick={handleClickUn}>Underwater</button>
-      {activityChooser()}
+      <h1>this is surface</h1>
+      {surfaces.map((surface) => (
+        <div className="container">
+          <Link to={`${surface.id}`}>
+            <div className="grid-item">
+              <h1>{surface.title}</h1>
+              <h3>{surface.description}</h3>
+              <h3>{surface.price}</h3>
+            </div>
+          </Link>
+        </div>
+      ))}
+      <button onClick={handleCreate}>Create Surface Activity</button>
     </div>
   )
 }
