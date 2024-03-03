@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom'
 
-const Nav = ({ user, handleLogout }) => {
+const Nav = ({ user, handleLogOut }) => {
   const location = useLocation()
 
   let navbarClass = ''
@@ -9,7 +9,7 @@ const Nav = ({ user, handleLogout }) => {
     navbarClass = 'home-navbar'
   } else if (location.pathname === '/About') {
     navbarClass = 'about-navbar'
-  } else if (location.pathname === '/Activities') {
+  } else if (location.pathname === '/activities') {
     navbarClass = 'activities-navbar'
   }
   let userOptions
@@ -17,7 +17,7 @@ const Nav = ({ user, handleLogout }) => {
     userOptions = (
       <nav className="header">
         <div className="Nav-text">
-          <NavLink to="/Home" className={`nav-link ${navbarClass}`}>
+          <NavLink to="/" className={`nav-link ${navbarClass}`}>
             Home
           </NavLink>
           <NavLink to="/Profile" className={`nav-link ${navbarClass}`}>
@@ -29,7 +29,7 @@ const Nav = ({ user, handleLogout }) => {
           <NavLink to="/About" className={`nav-link ${navbarClass}`}>
             About
           </NavLink>
-          <NavLink onClick={handleLogout} to="/Home">
+          <NavLink onClick={handleLogOut} to="/Home" className={`nav-link ${navbarClass}`}>
             Logout
           </NavLink>
         </div>

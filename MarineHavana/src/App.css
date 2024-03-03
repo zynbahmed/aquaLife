@@ -69,13 +69,41 @@ header nav a {
   font-weight: 600;
 }
 
-.about-navbar{
+.about-navbar {
   color: rgb(0, 0, 0); /* Change the text color to blue */
   text-decoration: none; /* Remove the underline */
   font-family: 'Montserrat', sans-serif;
-
 }
 
 .about-navbar:hover {
   font-weight: 600;
+}
+
+.about-wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+body,
+html {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.p-about2 {
+  padding-top: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.h-about {
+  font-size: 50px;
+}
+
+.about-main {
+  background-color: #ffffff;
+  height: 100vh;
+  padding: 200px 20px;
+  box-sizing: border-box;
 }
