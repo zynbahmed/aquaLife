@@ -96,7 +96,7 @@ const App = () => {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route
-            path="/Activities/:id"
+            path="/activities/:id"
             element={<ActivityDetails activities={activities} />}
           />
           <Route
