@@ -17,14 +17,26 @@ const Nav = ({ user, handleLogout }) => {
     userOptions = (
       <nav className="header">
         <div className="Nav-text">
+          <NavLink to="/Home" className={`nav-link ${navbarClass}`}>
+            Home
+          </NavLink>
           <NavLink to="/Profile" className={`nav-link ${navbarClass}`}>
             Profile
           </NavLink>
           <NavLink to="/creategame" className={`nav-link ${navbarClass}`}>
-            game
+            Create Activity
           </NavLink>
           <NavLink to="/Activities" className={`nav-link ${navbarClass}`}>
             Activities
+          </NavLink>
+          <NavLink to="/About" className={`nav-link ${navbarClass}`}>
+            About
+          </NavLink>
+          <NavLink to="/About" className={`nav-link ${navbarClass}`}>
+            About
+          </NavLink>
+          <NavLink className="Link" onClick={handleLogout} to="/Home">
+            Sign Out
           </NavLink>
         </div>
       </nav>
