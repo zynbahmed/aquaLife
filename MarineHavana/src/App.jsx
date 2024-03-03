@@ -9,11 +9,10 @@ import Profile from './pages/Profile'
 import Login from './pages/Login'
 import { useState, useEffect } from 'react'
 import CreateActivity from './pages/CreateActivity'
-import surfaceAct from './data/surface'
+import axios from 'axios'
 import ActivityDetails from './components/ActivityDetails'
 
 import { CheckSession } from './services/Auth'
-
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -36,9 +35,8 @@ const App = () => {
     }
   }, [])
 
-
   let nav = useNavigate()
-  const [surfaces, setSurfaces] = useState(surfaceAct)
+  const [activities, setActivities] = useState([])
   const [newSurface, setNewSurface] = useState({
     id: '',
     title: '',
@@ -69,24 +67,37 @@ const App = () => {
     nav('/creategame')
   }
 
+  const getActivity = async () => {
+    let allList = await axios.get('http://localhost:3001/activities')
+    console.log(allList)
+    setActivities(allList.data)
+  }
+
+  useEffect(() => {
+    getActivity()
+  }, [])
+
   return (
     <div>
       <header>
-         <Nav user={user}
-        handleLogOut={handleLogOut} />
-         
+        <Nav user={user} handleLogOut={handleLogOut} />
       </header>
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
-          <Route path="/Activities" element={<Activities />} />
+          <Route
+            path="/activities"
+            element={
+              <Activities activities={activities} getActivity={getActivity} />
+            }
+          />
           <Route path="/register" element={<Registeration />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="/login" element={<Login setUser={setUser}/>} />
+          <Route path="/login" element={<Login setUser={setUser} />} />
           <Route
             path="/Activities/:id"
-            element={<ActivityDetails surfaces={surfaces} />}
+            element={<ActivityDetails activities={activities} />}
           />
           <Route
             path="/creategame"
