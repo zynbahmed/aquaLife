@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+
+import { SignInUser } from '../services/Auth'
+
+
 //import { LoginUser } from '../services/auth'
-const Login = () => {
+const Login = ({setUser}) => {
   let navigate = useNavigate()
   const initialState = {
     email: '',
@@ -16,12 +20,15 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await LoginUser({
-      email: formValues.email,
-      password: formValues.password
-    })
-
+    const payload = await SignInUser(formValues)
     setFormValues(initialState)
+    setUser(payload)
+    // await LoginUser({
+    //   email: formValues.email,
+    //   password: formValues.password
+    // })
+
+    // setFormValues(initialState)
 
     navigate('/')
   }
