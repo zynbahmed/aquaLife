@@ -10,7 +10,7 @@ const Activities = (props) => {
   }, [])
 
   const handleCreate = () => {
-    nav('/creategame')
+    nav('/createActivity')
   }
   console.log(props.activities)
 

@@ -37,7 +37,7 @@ const App = () => {
 
   let nav = useNavigate()
   const [activities, setActivities] = useState([])
-  const [newSurface, setNewSurface] = useState({
+  const [newActivity, setNewActivity] = useState({
     id: '',
     title: '',
     image: '',
@@ -45,32 +45,20 @@ const App = () => {
     price: ''
   })
 
-  const addSurface = (e) => {
-    e.preventDefault()
-    const currentSurface = surfaces
-    const createdSurface = {
-      ...newSurface,
-      id: parseInt(surfaces.length + 1),
-      price: parseInt(newSurface.price)
-    }
-    currentSurface.push(createdSurface)
-    setSurfaces(currentSurface)
-    setNewSurface({ id: '', title: '', image: '', description: '', price: '' })
-    return createdSurface.id
-  }
-
   const handleChange = (e) => {
-    setNewSurface({ ...newSurface, [e.target.name]: e.target.value })
-  }
-
-  const handleCreate = () => {
-    nav('/creategame')
+    setNewActivity({ ...newActivity, [e.target.name]: e.target.value })
   }
 
   const getActivity = async () => {
     let allList = await axios.get('http://localhost:3001/activities')
     console.log(allList)
     setActivities(allList.data)
+  }
+
+  const addActivity = async () => {
+    let res = await axios.post('http://localhost:3001/activities', newActivity)
+    console.log(res)
+    setActivities([...activities, res.data])
   }
 
   useEffect(() => {
@@ -100,12 +88,10 @@ const App = () => {
             element={<ActivityDetails activities={activities} />}
           />
           <Route
-            path="/creategame"
+            path="/createActivity"
             element={
               <CreateActivity
-                handleChange={handleChange}
-                newSurface={newSurface}
-                addSurface={addSurface}
+                newActivity={newActivity}
               />
             }
           />
