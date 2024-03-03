@@ -1,21 +1,32 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom';
 
 const Nav = () => {
+  const location = useLocation();
+
+  let navbarClass = '';
+
+  if (location.pathname === '/') {
+    navbarClass = 'home-navbar';
+  } else if (location.pathname === '/About') {
+    navbarClass = 'about-navbar';
+  } else if (location.pathname === '/Activities') {
+    navbarClass = 'activities-navbar';
+  }
 
   return (
     <header>
       <nav className="header">
-      <div className="Nav-text">
-      <NavLink to='/' className="nav-link">Home</NavLink>
-    <NavLink to='/About' className="nav-link">About</NavLink>
-    <NavLink to='/Activities' className="nav-link">Activities</NavLink>  
-    <NavLink to='/Registeration' className="nav-link">Registration</NavLink>
-    <NavLink to='/Profile' className="nav-link">Profile</NavLink>
-    <NavLink to='/Login' className="nav-link">Login</NavLink>
-      </div>
-    </nav>
+        <div className="Nav-text">
+          <NavLink exact to="/" className={`nav-link ${navbarClass}`}>Home</NavLink>
+          <NavLink to="/About" className={`nav-link ${navbarClass}`}>About</NavLink>
+          <NavLink to="/Activities" className={`nav-link ${navbarClass}`}>Activities</NavLink>
+          <NavLink to="/Registeration" className={`nav-link ${navbarClass}`}>Registration</NavLink>
+          <NavLink to="/Profile" className={`nav-link ${navbarClass}`}>Profile</NavLink>
+          <NavLink to="/Login" className={`nav-link ${navbarClass}`}>Login</NavLink>
+        </div>
+      </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

@@ -54,16 +54,28 @@ header nav a {
   padding-left: 280px;
 }
 
-.Nav-text {
+/* .Nav-text {
   color: #eee;
+  font-family: 'Montserrat', sans-serif;
+} */
+
+.home-navbar {
+  color: rgb(255, 255, 255); /* Change the text color to blue */
+  text-decoration: none; /* Remove the underline */
   font-family: 'Montserrat', sans-serif;
 }
 
-.nav-link {
-  color: rgb(255, 255, 255); /* Change the text color to blue */
-  text-decoration: none; /* Remove the underline */
+.home-navbar:hover {
+  font-weight: 600;
 }
 
-.nav-link:hover {
+.about-navbar{
+  color: rgb(0, 0, 0); /* Change the text color to blue */
+  text-decoration: none; /* Remove the underline */
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.about-navbar:hover {
   font-weight: 600;
 }
