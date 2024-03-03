@@ -56,9 +56,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Activities" element={<Activities />} />
-          <Route path="/Registeration" element={<Registeration />} />
+          <Route path="/register" element={<Registeration />} />
           <Route path="/Profile" element={<Profile />} />
-          <Route path="Login" element={<Login/>} />
+          <Route path="/login" element={<Login/>} />
           <Route
             path="/Activities/:id"
             element={<ActivityDetails surfaces={surfaces} />}

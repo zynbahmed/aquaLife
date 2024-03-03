@@ -2,6 +2,8 @@ import { useState } from 'react'
 // import { RegisterUser } 
 import { useNavigate } from 'react-router-dom'
 
+import { RegisterUser } from '../services/Auth'
+
 const Registeration = () => {
   let navigate = useNavigate()
   const initialState = {
@@ -26,7 +28,7 @@ const Registeration = () => {
 
     setFormValues(initialState)
 
-    navigate('/')
+    // navigate('/Login')
   }
 
   return (
