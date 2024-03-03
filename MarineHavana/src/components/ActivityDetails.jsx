@@ -11,7 +11,6 @@ const ActivityDetails = (props) => {
     )
     setAct(selectedAct)
   }, [props.surface, id])
-
   return act ? (
     <div>
       <div>

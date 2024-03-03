@@ -1,23 +1,26 @@
-import { useState } from 'react'
-import surfaceAct from '../data/surface'
+import { useEffect, useState } from 'react'
+
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
-const Activities = () => {
+const Activities = (props) => {
   let nav = useNavigate()
-  const [surfaces, setSurfaces] = useState(surfaceAct)
+  useEffect(() => {
+    props.getActivity()
+  }, [])
 
   const handleCreate = () => {
     nav('/creategame')
   }
+  console.log(props.activities)
 
   return (
-    <div>
+    <div className="container">
       <h1>this is surface</h1>
-      {surfaces.map((surface) => (
-        <div className="container">
+      {props.activities.map((surface) => (
+        <div className="">
           <Link to={`${surface.id}`}>
-            <div className="grid-item">
+            <div className="">
               <h1>{surface.title}</h1>
               <h3>{surface.description}</h3>
               <h3>{surface.price}</h3>

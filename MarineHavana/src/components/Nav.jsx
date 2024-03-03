@@ -23,20 +23,14 @@ const Nav = ({ user, handleLogOut }) => {
           <NavLink to="/Profile" className={`nav-link ${navbarClass}`}>
             Profile
           </NavLink>
-          <NavLink to="/creategame" className={`nav-link ${navbarClass}`}>
-            Create Activity
-          </NavLink>
-          <NavLink to="/Activities" className={`nav-link ${navbarClass}`}>
+          <NavLink to="/activities" className={`nav-link ${navbarClass}`}>
             Activities
           </NavLink>
           <NavLink to="/About" className={`nav-link ${navbarClass}`}>
             About
           </NavLink>
-          <NavLink to="/About" className={`nav-link ${navbarClass}`}>
-            About
-          </NavLink>
-          <NavLink onClick={handleLogOut} to="/">
-            Sign Out
+          <NavLink onClick={handleLogout} to="/Home">
+            Logout
           </NavLink>
         </div>
       </nav>
