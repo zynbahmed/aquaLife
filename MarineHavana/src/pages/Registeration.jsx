@@ -1,72 +1,78 @@
-import { useState } from 'react'
-// import { RegisterUser } 
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { RegisterUser } from '../services/Auth';
 
-import { RegisterUser } from '../services/Auth'
-
-const Registeration = () => {
-  let navigate = useNavigate()
+const Registration = () => {
+  let navigate = useNavigate();
   const initialState = {
     name: '',
     email: '',
     password: '',
-    confirmPassword: ''
-  }
-  const [formValues, setFormValues] = useState(initialState)
+    confirmPassword: '',
+  };
+  const [formValues, setFormValues] = useState(initialState);
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.id]: e.target.value })
-  }
+    setFormValues({ ...formValues, [e.target.id]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     await RegisterUser({
       name: formValues.name,
       email: formValues.email,
-      password: formValues.password
-    })
+      password: formValues.password,
+    });
 
-    setFormValues(initialState)
+    setFormValues(initialState);
 
-    // navigate('/Login')
-  }
+    // navigate('/Login');
+  };
 
   return (
-    <section>
+    <section id="update-form">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Name"
-          id="name"
-          onChange={handleChange}
-          value={formValues.name}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Email"
-          id="email"
-          onChange={handleChange}
-          value={formValues.email}
-          required
-        />
-        <input
-          id="password"
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-          value={formValues.password}
-          required
-        />
-        <input
-          id="confirmPassword"
-          type="password"
-          placeholder="Confirm Password"
-          onChange={handleChange}
-          value={formValues.confirmPassword}
-          required
-        />
+        <div>
+          <label htmlFor="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            onChange={handleChange}
+            value={formValues.name}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            onChange={handleChange}
+            value={formValues.email}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            onChange={handleChange}
+            value={formValues.password}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            onChange={handleChange}
+            value={formValues.confirmPassword}
+            required
+          />
+        </div>
         <button
           type="submit"
           disabled={
@@ -79,7 +85,7 @@ const Registeration = () => {
         </button>
       </form>
     </section>
-  )
-}
+  );
+};
 
-export default Registeration
+export default Registration;
