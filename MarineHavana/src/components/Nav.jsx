@@ -9,7 +9,7 @@ const Nav = ({ user, handleLogOut }) => {
     navbarClass = 'home-navbar'
   } else if (location.pathname === '/About') {
     navbarClass = 'about-navbar'
-  } else if (location.pathname === '/Activities') {
+  } else if (location.pathname === '/activities') {
     navbarClass = 'activities-navbar'
   }
   let userOptions
@@ -29,7 +29,7 @@ const Nav = ({ user, handleLogOut }) => {
           <NavLink to="/About" className={`nav-link ${navbarClass}`}>
             About
           </NavLink>
-          <NavLink onClick={handleLogout} to="/Home">
+          <NavLink onClick={handleLogOut} to="/Home" className={`nav-link ${navbarClass}`}>
             Logout
           </NavLink>
         </div>
