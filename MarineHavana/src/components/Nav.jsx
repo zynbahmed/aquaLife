@@ -24,6 +24,7 @@ const Nav = ({ user, handleLogOut }) => {
   } else if (location.pathname === '/login') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
+  } else if (location.pathname === '/cart') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
   }
