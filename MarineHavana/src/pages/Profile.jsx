@@ -1,3 +1,5 @@
+import Bookings from "../components/Bookings"
+
 const Profiles = ({ user }) => {
   return (
     <div>
@@ -7,6 +9,7 @@ const Profiles = ({ user }) => {
       </div>
       <div>
         <h2>Bookings</h2>
+        {user.bookings ? <Bookings /> : <h3>No Booking has been made!</h3>}
       </div>
     </div>
   )

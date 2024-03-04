@@ -4,10 +4,10 @@ import './Activity.css'
 const Activity = ({ ev }) => {
   return (
     <div>
-      <div>
+      <Link to={ev._id}>
         <h1>{ev.title}</h1>
         <h1>{ev.price}</h1>
-      </div>
+      </Link>
     </div>
   )
 }
