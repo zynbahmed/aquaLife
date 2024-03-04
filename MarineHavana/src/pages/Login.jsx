@@ -23,19 +23,19 @@ const Login = ({setUser}) => {
     const payload = await SignInUser(formValues)
     setFormValues(initialState)
     setUser(payload)
-    // await LoginUser({
-    //   email: formValues.email,
-    //   password: formValues.password
-    // })
-
-    // setFormValues(initialState)
+    
 
     navigate('/')
   }
   return (
-    <section>
-      <h1>Login</h1>
+    <div className="background-image2">
+    <section id="update-form2">
+      <h1 className="account-title">Login</h1>
+      <p className="account-description">
+          Enter your email and password</p>
+        
       <form onSubmit={handleSubmit}>
+      <div>
         <input
           type="email"
           placeholder="Email"
@@ -43,6 +43,8 @@ const Login = ({setUser}) => {
           onChange={handleChange}
           required
         />
+        </div>
+        <div>
         <input
           id="password"
           type="password"
@@ -50,14 +52,19 @@ const Login = ({setUser}) => {
           onChange={handleChange}
           required
         />
+        </div>
        <div class="button-container">
         <button type="submit">Login</button>
-        <Link to="/register">
-          <button type="button">Register</button>
-        </Link>
+        <div className="register-container">
+        <p className="register">No account?</p>
+        <Link to="/register" className="register-link">
+    Create account
+  </Link>
+</div>
         </div>
       </form>
     </section>
+    </div>
   )
 }
 

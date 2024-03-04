@@ -18,6 +18,12 @@ const Nav = ({ user, handleLogOut }) => {
   } else if (location.pathname === '/activities') {
     navbarClass = 'about-navbar';
     headerClass= 'header2';
+  } else if (location.pathname === '/Profile') {
+    navbarClass = 'about-navbar';
+    headerClass= 'header2';
+  } else if (location.pathname === '/login') {
+    navbarClass = 'about-navbar';
+    headerClass= 'header2';
   }
   let userOptions
   if (user) {
@@ -36,7 +42,7 @@ const Nav = ({ user, handleLogOut }) => {
           <NavLink to="/About" className={`nav-link ${navbarClass}`}>
             About
           </NavLink>
-          <NavLink onClick={handleLogOut} to="/">
+          <NavLink onClick={handleLogOut} to="/" className={`nav-link ${navbarClass}`}>
             Logout
           </NavLink>
         </div>
