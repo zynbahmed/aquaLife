@@ -1,18 +1,18 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import Nav from './components/Nav'
-import Home from './pages/Home'
-import About from './pages/About'
-import Registeration from './pages/Registeration'
-import Activities from './pages/Activities'
 import './App.css'
-import Profile from './pages/Profile'
-import Login from './pages/Login'
-import { useState, useEffect } from 'react'
-import CreateActivity from './pages/CreateActivity'
 import axios from 'axios'
-import ActivityDetails from './components/ActivityDetails'
-
+import Home from './pages/Home'
+import Login from './pages/Login'
+import About from './pages/About'
+import Nav from './components/Nav'
+import Profile from './pages/Profile'
+import Activities from './pages/Activities'
+import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
+import Registeration from './pages/Registeration'
+import CreateActivity from './pages/CreateActivity'
+import ActivityDetails from './components/ActivityDetails'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import UpdateActivity from './pages/UpdateActivity'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -37,35 +37,13 @@ const App = () => {
 
   let nav = useNavigate()
   const [activities, setActivities] = useState([])
-  const [newSurface, setNewSurface] = useState({
+  const [newActivity, setNewActivity] = useState({
     id: '',
     title: '',
     image: '',
     description: '',
     price: ''
   })
-
-  const addSurface = (e) => {
-    e.preventDefault()
-    const currentSurface = surfaces
-    const createdSurface = {
-      ...newSurface,
-      id: parseInt(surfaces.length + 1),
-      price: parseInt(newSurface.price)
-    }
-    currentSurface.push(createdSurface)
-    setSurfaces(currentSurface)
-    setNewSurface({ id: '', title: '', image: '', description: '', price: '' })
-    return createdSurface.id
-  }
-
-  const handleChange = (e) => {
-    setNewSurface({ ...newSurface, [e.target.name]: e.target.value })
-  }
-
-  const handleCreate = () => {
-    nav('/creategame')
-  }
 
   const getActivity = async () => {
     let allList = await axios.get('http://localhost:3001/activities')
@@ -96,18 +74,16 @@ const App = () => {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route
-            path="/Activities/:id"
+            path="/activities/:activity_id"
             element={<ActivityDetails activities={activities} />}
           />
           <Route
-            path="/creategame"
-            element={
-              <CreateActivity
-                handleChange={handleChange}
-                newSurface={newSurface}
-                addSurface={addSurface}
-              />
-            }
+            path="/createActivity"
+            element={<CreateActivity newActivity={newActivity} />}
+          />
+          <Route
+            path="/activities/:activity_id/update"
+            element={<UpdateActivity />}
           />
         </Routes>
       </main>
