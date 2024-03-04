@@ -44,16 +44,6 @@ const App = () => {
     price: ''
   })
 
-  const getActivity = async () => {
-    let allList = await axios.get('http://localhost:3001/activities')
-    console.log(allList)
-    setActivities(allList.data)
-  }
-
-  useEffect(() => {
-    getActivity()
-  }, [])
-
   return (
     <div>
       <header>
@@ -63,12 +53,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
-          <Route
-            path="/activities"
-            element={
-              <Activities activities={activities} getActivity={getActivity} />
-            }
-          />
+          <Route path="/activities" element={<Activities />} />
           <Route path="/register" element={<Registeration />} />
           <Route path="/Profile" element={<Profile />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
