@@ -1,18 +1,18 @@
-import "./App.css"
-import axios from "axios"
-import Home from "./pages/Home"
-import Login from "./pages/Login"
-import About from "./pages/About"
-import Nav from "./components/Nav"
-import Profile from "./pages/Profile"
-import Activities from "./pages/Activities"
-import { useState, useEffect } from "react"
-import { CheckSession } from "./services/Auth"
-import Registeration from "./pages/Registeration"
-import CreateActivity from "./pages/CreateActivity"
-import ActivityDetails from "./components/ActivityDetails"
-import { Routes, Route, useNavigate } from "react-router-dom"
-import UpdateActivity from "./pages/UpdateActivity"
+import './App.css'
+import Cart from './pages/Cart'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import About from './pages/About'
+import Nav from './components/Nav'
+import Profile from './pages/Profile'
+import Activities from './pages/Activities'
+import { useState, useEffect } from 'react'
+import { CheckSession } from './services/Auth'
+import Registeration from './pages/Registeration'
+import CreateActivity from './pages/CreateActivity'
+import ActivityDetails from './components/ActivityDetails'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import UpdateActivity from './pages/UpdateActivity'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -29,7 +29,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem('token')
     if (token) {
       checkToken()
     }
@@ -38,11 +38,11 @@ const App = () => {
   let nav = useNavigate()
   const [activities, setActivities] = useState([])
   const [newActivity, setNewActivity] = useState({
-    id: "",
-    title: "",
-    image: "",
-    description: "",
-    price: "",
+    id: '',
+    title: '',
+    image: '',
+    description: '',
+    price: ''
   })
 
   return (
@@ -55,6 +55,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/activities" element={<Activities />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/register" element={<Registeration />} />
           <Route path="/Profile" element={<Profile user={user} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />

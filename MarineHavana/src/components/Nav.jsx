@@ -3,21 +3,21 @@ import { NavLink, useLocation } from 'react-router-dom'
 const Nav = ({ user, handleLogOut }) => {
   const location = useLocation()
 
-  let navbarClass = '';
-  let headerClass = '';
+  let navbarClass = ''
+  let headerClass = ''
 
   if (location.pathname === '/') {
-    navbarClass = 'home-navbar';
-    headerClass= 'header';
+    navbarClass = 'home-navbar'
+    headerClass = 'header'
   } else if (location.pathname === '/About') {
-    navbarClass = 'about-navbar';
-    headerClass= 'header2';
+    navbarClass = 'about-navbar'
+    headerClass = 'header2'
   } else if (location.pathname === '/register') {
-    navbarClass = 'about-navbar';
-    headerClass= 'header2';
+    navbarClass = 'about-navbar'
+    headerClass = 'header2'
   } else if (location.pathname === '/activities') {
-    navbarClass = 'about-navbar';
-    headerClass= 'header2';
+    navbarClass = 'about-navbar'
+    headerClass = 'header2'
   }
   let userOptions
   if (user) {
@@ -35,6 +35,9 @@ const Nav = ({ user, handleLogOut }) => {
           </NavLink>
           <NavLink to="/About" className={`nav-link ${navbarClass}`}>
             About
+          </NavLink>
+          <NavLink to="/cart" className={`nav-link ${navbarClass}`}>
+            Cart
           </NavLink>
           <NavLink onClick={handleLogOut} to="/">
             Logout
