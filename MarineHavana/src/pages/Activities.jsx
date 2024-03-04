@@ -19,7 +19,7 @@ const Activities = (props) => {
       <h1>this is surface</h1>
       {props.activities.map((surface) => (
         <div className="">
-          <Link to={`${surface.id}`}>
+          <Link to={`${surface._id}`}>
             <div className="">
               <h1>{surface.title}</h1>
               <h3>{surface.description}</h3>
