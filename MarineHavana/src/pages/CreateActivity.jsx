@@ -7,13 +7,15 @@ const CreateActivity = (props) => {
   const titleRef = useRef(null)
   const descRef = useRef(null)
   const priceRef = useRef(null)
+  const imgRef = useRef(null)
 
   const handleSubmit = (e) => {
     e.preventDefault()
     Client.post('/activities', {
       title: titleRef.current.value,
       description: descRef.current.value,
-      price: priceRef.current.value
+      price: priceRef.current.value,
+      image: imgRef.current.value
     }).then((response) => {
       // console.log(response)
       navigate('/activities')
@@ -21,6 +23,7 @@ const CreateActivity = (props) => {
     titleRef.current.value = null
     descRef.current.value = null
     priceRef.current.value = null
+    imgRef.current.value = null
     // props.addActivity()
     // console.log(newActivity)
     // navigate('/activities')
@@ -59,6 +62,10 @@ const CreateActivity = (props) => {
             placeholder={'price'}
             ref={priceRef}
           />
+        </div>
+        <div>
+          <label htmlFor="image">Image:</label>
+          <input type="text" id={'image'} placeholder={'image'} ref={imgRef} />
         </div>
         <button type="submit">Submit</button>
       </form>

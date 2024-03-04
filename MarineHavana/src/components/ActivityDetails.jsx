@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import axios from "axios"
-import Client from "../services/api"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import Client from '../services/api'
+import { useNavigate } from 'react-router-dom'
 
-import Reviews from "./Reviews"
-import AddReview from "./AddReview"
+import Reviews from './Reviews'
+import AddReview from './AddReview'
 
 const ActivityDetails = (props) => {
   let navigate = useNavigate()
   let { activity_id } = useParams()
-  const [act, setAct] = useState("")
+  const [act, setAct] = useState('')
+  const [item, setItems] = useState([])
 
   useEffect(() => {
     const activityDetails = async () => {
@@ -28,7 +29,7 @@ const ActivityDetails = (props) => {
 
   const handleSubmit = () => {
     Client.delete(`/activities/${activity_id}`, {}).then((response) => {
-      navigate("/activities")
+      navigate('/activities')
     })
   }
   const handleUpdate = () => {
@@ -36,7 +37,7 @@ const ActivityDetails = (props) => {
   }
 
   const handleCart = () => {
-    navigate(``)
+    setItems(...item)
   }
 
   return act ? (
@@ -45,6 +46,7 @@ const ActivityDetails = (props) => {
         <h1>{act.title}</h1>
         <h3>{act.description}</h3>
         <h3>{act.price}</h3>
+        <img src={act.image} alt="" />
       </div>
       <button onClick={handleSubmit}>DELETE</button>
       <button onClick={handleUpdate}>UPDATE</button>
