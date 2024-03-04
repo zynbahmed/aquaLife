@@ -12,7 +12,7 @@ import Registeration from './pages/Registeration'
 import CreateActivity from './pages/CreateActivity'
 import ActivityDetails from './components/ActivityDetails'
 import { Routes, Route, useNavigate } from 'react-router-dom'
-import UpdateActivity from './pages/UpdateActivity'
+import UpdateActivity from './pages/UpdateActivity' 
 
 const App = () => {
   const [user, setUser] = useState(null)
