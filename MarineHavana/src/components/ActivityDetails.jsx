@@ -34,6 +34,11 @@ const ActivityDetails = (props) => {
   const handleUpdate = () => {
     navigate(`/activities/${activity_id}/update`)
   }
+
+  const handleCart = () => {
+    navigate(``)
+  }
+
   return act ? (
     <div>
       <div>
@@ -43,6 +48,7 @@ const ActivityDetails = (props) => {
       </div>
       <button onClick={handleSubmit}>DELETE</button>
       <button onClick={handleUpdate}>UPDATE</button>
+      <button onClick={handleCart}>Add to Cart</button>
       <div>
         <Reviews reviews={act.reviews} />
         <AddReview activity_id={activity_id} ali={ali} />
