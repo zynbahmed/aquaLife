@@ -31,7 +31,9 @@ const UpdateActivity = () => {
   })
 
   const getDetails = () => {
-    const filteredActivties = activities.find((activity) => activity._id === activity_id)
+    const filteredActivties = activities.find(
+      (activity) => activity._id === activity_id
+    )
     setActivityDetails(filteredActivties)
   }
 
@@ -72,7 +74,7 @@ const UpdateActivity = () => {
             />
             <label htmlFor="price">Price:</label>
             <input
-              type="url"
+              type="text"
               id="price"
               defaultValue={activityDetails.price}
               ref={priceRef}
