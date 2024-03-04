@@ -30,6 +30,7 @@ const Registration = () => {
   };
 
   return (
+    <div className="background-image">
     <section id="update-form">
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
@@ -85,6 +86,7 @@ const Registration = () => {
         </button>
       </form>
     </section>
+    </div>
   );
 };
 

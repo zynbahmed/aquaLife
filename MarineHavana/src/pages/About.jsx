@@ -16,7 +16,7 @@ const About = () => {
           interests.
         </p>
         <div>
-        <Link className="cta alt" to="/activity">Read More</Link>
+        <Link className="cta alt" to="/activities">Read More</Link>
         </div>
       </main>
     </div>
