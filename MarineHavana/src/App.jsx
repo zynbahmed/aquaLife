@@ -1,18 +1,17 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import Nav from './components/Nav'
-import Home from './pages/Home'
-import About from './pages/About'
-import Registeration from './pages/Registeration'
-import Activities from './pages/Activities'
 import './App.css'
-import Profile from './pages/Profile'
-import Login from './pages/Login'
-import { useState, useEffect } from 'react'
-import CreateActivity from './pages/CreateActivity'
 import axios from 'axios'
-import ActivityDetails from './components/ActivityDetails'
-
+import Home from './pages/Home'
+import Login from './pages/Login'
+import About from './pages/About'
+import Nav from './components/Nav'
+import Profile from './pages/Profile'
+import Activities from './pages/Activities'
+import { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
+import Registeration from './pages/Registeration'
+import CreateActivity from './pages/CreateActivity'
+import ActivityDetails from './components/ActivityDetails'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -45,20 +44,10 @@ const App = () => {
     price: ''
   })
 
-  const handleChange = (e) => {
-    setNewActivity({ ...newActivity, [e.target.name]: e.target.value })
-  }
-
   const getActivity = async () => {
     let allList = await axios.get('http://localhost:3001/activities')
     console.log(allList)
     setActivities(allList.data)
-  }
-
-  const addActivity = async () => {
-    let res = await axios.post('http://localhost:3001/activities', newActivity)
-    console.log(res)
-    setActivities([...activities, res.data])
   }
 
   useEffect(() => {
@@ -84,16 +73,12 @@ const App = () => {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route
-            path="/activities/:id"
+            path="/activities/:activity_id"
             element={<ActivityDetails activities={activities} />}
           />
           <Route
             path="/createActivity"
-            element={
-              <CreateActivity
-                newActivity={newActivity}
-              />
-            }
+            element={<CreateActivity newActivity={newActivity} />}
           />
         </Routes>
       </main>

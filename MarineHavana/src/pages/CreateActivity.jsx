@@ -36,7 +36,6 @@ const CreateActivity = (props) => {
           <label htmlFor="title">Title:</label>
           <input
             type="text"
-            value={newActivity.title}
             id={'title'}
             placeholder={'title'}
             ref={titleRef}
@@ -45,7 +44,6 @@ const CreateActivity = (props) => {
         <div>
           <label htmlFor="description">Description:</label>
           <textarea
-            value={newActivity.description}
             id={'description'}
             placeholder={'description'}
             cols="30"
@@ -57,8 +55,7 @@ const CreateActivity = (props) => {
           <label htmlFor="price">Price:</label>
           <input
             type="number"
-            value={newActivity.price}
-            name={'price'}
+            id={'price'}
             placeholder={'price'}
             ref={priceRef}
           />
