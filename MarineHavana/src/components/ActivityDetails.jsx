@@ -24,6 +24,9 @@ const ActivityDetails = (props) => {
       navigate('/activities')
     })
   }
+  const handleUpdate = () => {
+      navigate(`/activities/${activity_id}/update`)
+  }
   return act ? (
     <div>
       <div>
@@ -32,6 +35,7 @@ const ActivityDetails = (props) => {
         <h3>{act.price}</h3>
       </div>
       <button onClick={handleSubmit}>DELETE</button>
+      <button onClick={handleUpdate}>UPDATE</button>
     </div>
   ) : null
 }
