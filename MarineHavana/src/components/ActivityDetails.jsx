@@ -1,13 +1,16 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
-import Client from '../services/api'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import axios from "axios"
+import Client from "../services/api"
+import { useNavigate } from "react-router-dom"
+
+import Reviews from "./Reviews"
+import AddReview from "./AddReview"
 
 const ActivityDetails = (props) => {
   let navigate = useNavigate()
   let { activity_id } = useParams()
-  const [act, setAct] = useState('')
+  const [act, setAct] = useState("")
 
   useEffect(() => {
     const activityDetails = async () => {
@@ -19,10 +22,17 @@ const ActivityDetails = (props) => {
     activityDetails()
   }, [props.activities, activity_id])
 
+  const ali = (a) => {
+    setAct(a)
+  }
+
   const handleSubmit = () => {
     Client.delete(`/activities/${activity_id}`, {}).then((response) => {
-      navigate('/activities')
+      navigate("/activities")
     })
+  }
+  const handleUpdate = () => {
+    navigate(`/activities/${activity_id}/update`)
   }
   return act ? (
     <div>
@@ -32,6 +42,11 @@ const ActivityDetails = (props) => {
         <h3>{act.price}</h3>
       </div>
       <button onClick={handleSubmit}>DELETE</button>
+      <button onClick={handleUpdate}>UPDATE</button>
+      <div>
+        <Reviews reviews={act.reviews} />
+        <AddReview activity_id={activity_id} ali={ali} />
+      </div>
     </div>
   ) : null
 }

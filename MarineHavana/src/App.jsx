@@ -55,7 +55,7 @@ const App = () => {
           <Route path="/About" element={<About />} />
           <Route path="/activities" element={<Activities />} />
           <Route path="/register" element={<Registeration />} />
-          <Route path="/Profile" element={<Profile />} />
+          <Route path="/Profile" element={<Profile user={user} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route
             path="/activities/:activity_id"
@@ -64,6 +64,10 @@ const App = () => {
           <Route
             path="/createActivity"
             element={<CreateActivity newActivity={newActivity} />}
+          />
+          <Route
+            path="/activities/:activity_id/update"
+            element={<UpdateActivity />}
           />
         </Routes>
       </main>

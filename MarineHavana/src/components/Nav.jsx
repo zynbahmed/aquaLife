@@ -3,19 +3,26 @@ import { NavLink, useLocation } from 'react-router-dom'
 const Nav = ({ user, handleLogOut }) => {
   const location = useLocation()
 
-  let navbarClass = ''
+  let navbarClass = '';
+  let headerClass = '';
 
   if (location.pathname === '/') {
-    navbarClass = 'home-navbar'
+    navbarClass = 'home-navbar';
+    headerClass= 'header';
   } else if (location.pathname === '/About') {
-    navbarClass = 'about-navbar'
+    navbarClass = 'about-navbar';
+    headerClass= 'header2';
+  } else if (location.pathname === '/register') {
+    navbarClass = 'about-navbar';
+    headerClass= 'header2';
   } else if (location.pathname === '/activities') {
-    navbarClass = 'activities-navbar'
+    navbarClass = 'about-navbar';
+    headerClass= 'header2';
   }
   let userOptions
   if (user) {
     userOptions = (
-      <nav className="header">
+      <nav className={`nav-link ${headerClass}`}>
         <div className="Nav-text">
           <NavLink to="/" className={`nav-link ${navbarClass}`}>
             Home
@@ -29,7 +36,7 @@ const Nav = ({ user, handleLogOut }) => {
           <NavLink to="/About" className={`nav-link ${navbarClass}`}>
             About
           </NavLink>
-          <NavLink onClick={handleLogOut} to="/Home" className={`nav-link ${navbarClass}`}>
+          <NavLink onClick={handleLogOut} to="/">
             Logout
           </NavLink>
         </div>
@@ -37,7 +44,7 @@ const Nav = ({ user, handleLogOut }) => {
     )
   }
   const publicOptions = (
-    <nav className="header">
+    <nav className={`nav-link ${headerClass}`}>
       <div className="Nav-text">
         <NavLink exact to="/" className={`nav-link ${navbarClass}`}>
           Home
