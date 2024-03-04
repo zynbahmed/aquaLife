@@ -44,20 +44,10 @@ const App = () => {
     price: ''
   })
 
-  const handleChange = (e) => {
-    setNewActivity({ ...newActivity, [e.target.name]: e.target.value })
-  }
-
   const getActivity = async () => {
     let allList = await axios.get('http://localhost:3001/activities')
     console.log(allList)
     setActivities(allList.data)
-  }
-
-  const addActivity = async () => {
-    let res = await axios.post('http://localhost:3001/activities', newActivity)
-    console.log(res)
-    setActivities([...activities, res.data])
   }
 
   useEffect(() => {
@@ -83,16 +73,12 @@ const App = () => {
           <Route path="/Profile" element={<Profile />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route
-            path="/activities/:id"
+            path="/activities/:activity_id"
             element={<ActivityDetails activities={activities} />}
           />
           <Route
             path="/createActivity"
-            element={
-              <CreateActivity
-                newActivity={newActivity}
-              />
-            }
+            element={<CreateActivity newActivity={newActivity} />}
           />
         </Routes>
       </main>
