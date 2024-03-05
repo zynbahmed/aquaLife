@@ -13,6 +13,7 @@ import CreateActivity from './pages/CreateActivity'
 import ActivityDetails from './components/ActivityDetails'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import UpdateActivity from './pages/UpdateActivity'
+import UpdateUser from './components/UpdateUser'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -80,6 +81,10 @@ const App = () => {
           <Route
             path="/activities/:activity_id/update"
             element={<UpdateActivity />}
+          />
+          <Route
+            path="/Profile/update"
+            element={<UpdateUser user={user} setUser={setUser}/>}
           />
         </Routes>
       </main>

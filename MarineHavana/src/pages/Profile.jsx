@@ -1,10 +1,15 @@
 import Bookings from "../components/Bookings"
+import { useNavigate } from "react-router-dom"
 
 const Profiles = ({ user }) => {
-  console.log(user)
+  const navigate = useNavigate()
+  const handleUpdate = () => {
+    navigate(`/Profile/update`)
+  }
   return (
     <div>
       <div>
+        <button onClick={handleUpdate}>UPDATE</button>
         <h2>{user.name}</h2>
         <h2>{user.email}</h2>
       </div>
