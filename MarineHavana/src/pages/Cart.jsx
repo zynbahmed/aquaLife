@@ -16,10 +16,9 @@ const Cart = ({ user, cart, setCart }) => {
 
   const buy = async () => {
     const request = { cart, user }
-    console.log(request)
     await Client.post("/bookings", request)
-    navigate("/")
     setCart([])
+    navigate("/Profile")
   }
 
   return (
