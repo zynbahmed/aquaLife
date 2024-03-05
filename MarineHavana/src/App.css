@@ -24,7 +24,7 @@ background-color: white;
 
 .banner-text h1 {
   color: #fff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-size: 80px;
   font-weight: 700;
@@ -35,7 +35,7 @@ background-color: white;
 .banner-text p {
   padding-top: -10;
   color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 35px;
   font-weight: 400;
   letter-spacing: 1px;
@@ -53,10 +53,6 @@ background-color: white;
   border-bottom: 1px solid #e6e6e6;
 }
 
-img {
-  width: 500px;
-  height: 500px;
-}
 .header {
   position: absolute;
   top: 60px;
@@ -82,7 +78,7 @@ header nav a {
   color: rgb(255, 255, 255); /* Change the text color to blue */
   text-decoration: none;
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .home-navbar:hover {
@@ -94,7 +90,7 @@ header nav a {
   text-decoration: none;
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border-bottom: 1.5px solid #4399f6;
 }
 
@@ -115,7 +111,7 @@ header nav a {
 
 body,
 html {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 0;
   margin: 0;
 }
@@ -150,7 +146,7 @@ html {
 }
 
 .about-image {
-  background-image: url('/images/3.jpg');
+  background-image: url("/images/3.jpg");
   width: 363px;
   background-size: cover;
   width: 90%;
@@ -247,9 +243,9 @@ video{
   margin-bottom: 20px;
 }
 
-#update-form input[type='text'],
-#update-form input[type='email'],
-#update-form input[type='password'] {
+#update-form input[type="text"],
+#update-form input[type="email"],
+#update-form input[type="password"] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -259,13 +255,13 @@ video{
   background-color: #eaebf0;
 }
 
-#update-form input[type='text']::placeholder,
-#update-form input[type='email']::placeholder,
-#update-form input[type='password']::placeholder {
+#update-form input[type="text"]::placeholder,
+#update-form input[type="email"]::placeholder,
+#update-form input[type="password"]::placeholder {
   color: #606167; /* Change the color of the placeholder text */
 }
 
-#update-form button[type='submit'] {
+#update-form button[type="submit"] {
   background-color: #4399f6;
   color: #000000;
   border: none;
@@ -279,7 +275,7 @@ video{
   font-size: 15px;
 }
 
-#update-form button[type='submit']:hover {
+#update-form button[type="submit"]:hover {
   background-color: #000000;
   color: #ffffff;
 }
@@ -336,9 +332,9 @@ video{
   margin-bottom: 20px;
 }
 
-#update-form2 input[type='text'],
-#update-form2 input[type='email'],
-#update-form2 input[type='password'] {
+#update-form2 input[type="text"],
+#update-form2 input[type="email"],
+#update-form2 input[type="password"] {
   width: 200px;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -348,13 +344,13 @@ video{
   background-color: #eaebf0;
 }
 
-#update-form2 input[type='text']::placeholder,
-#update-form2 input[type='email']::placeholder,
-#update-form2 input[type='password']::placeholder {
+#update-form2 input[type="text"]::placeholder,
+#update-form2 input[type="email"]::placeholder,
+#update-form2 input[type="password"]::placeholder {
   color: #606167; /* Change the color of the placeholder text */
 }
 
-#update-form2 button[type='submit'] {
+#update-form2 button[type="submit"] {
   background-color: #4399f6;
   color: #000000;
   border: none;
@@ -369,7 +365,7 @@ video{
   font-size: 15px;
 }
 
-#update-form2 button[type='submit']:hover {
+#update-form2 button[type="submit"]:hover {
   background-color: #000000;
   color: #ffffff;
 }
