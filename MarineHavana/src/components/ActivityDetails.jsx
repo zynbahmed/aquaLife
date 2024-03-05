@@ -35,9 +35,12 @@ const ActivityDetails = (props) => {
   const handleUpdate = () => {
     navigate(`/activities/${activity_id}/update`)
   }
-
-  const handleCart = () => {
-    setItems(...item)
+  const addCart = (act) => {
+    if (props.cart.indexOf(act) !== -1) {
+      return
+    }
+    act.userQty = 1
+    props.setCart([...props.cart, act])
   }
 
   return act ? (
@@ -50,7 +53,7 @@ const ActivityDetails = (props) => {
       </div>
       <button onClick={handleSubmit}>DELETE</button>
       <button onClick={handleUpdate}>UPDATE</button>
-      <button onClick={handleCart}>Add to Cart</button>
+      <button onClick={() => addCart(act)}>Add to Cart</button>
       <div>
         <Reviews reviews={act.reviews} />
         <AddReview activity_id={activity_id} ali={ali} />

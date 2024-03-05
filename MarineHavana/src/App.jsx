@@ -16,6 +16,7 @@ import UpdateActivity from './pages/UpdateActivity'
 
 const App = () => {
   const [user, setUser] = useState(null)
+  const [cart, setCart] = useState([])
 
   const checkToken = async () => {
     const user = await CheckSession()
@@ -55,13 +56,22 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/activities" element={<Activities />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} setCart={setCart} user={user} />}
+          />
           <Route path="/register" element={<Registeration />} />
           <Route path="/Profile" element={<Profile user={user} />} />
           <Route path="/login" element={<Login setUser={setUser} />} />
           <Route
             path="/activities/:activity_id"
-            element={<ActivityDetails activities={activities} />}
+            element={
+              <ActivityDetails
+                activities={activities}
+                cart={cart}
+                setCart={setCart}
+              />
+            }
           />
           <Route
             path="/createActivity"
