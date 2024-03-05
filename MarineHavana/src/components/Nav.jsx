@@ -5,6 +5,7 @@ const Nav = ({ user, handleLogOut }) => {
 
   let navbarClass = ''
   let headerClass = ''
+  let textClass = ''
 
   if (location.pathname === '/') {
     navbarClass = 'home-navbar'
@@ -12,27 +13,33 @@ const Nav = ({ user, handleLogOut }) => {
   } else if (location.pathname === '/About') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
+    textClass= 'header-text'
   } else if (location.pathname === '/register') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
+    textClass= 'header-text'
   } else if (location.pathname === '/activities') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
+    textClass= 'header-text'
   } else if (location.pathname === '/Profile') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
+    textClass= 'header-text'
   } else if (location.pathname === '/login') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
+    textClass= 'header-text'
   } else if (location.pathname === '/cart') {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
+    textClass= 'header-text'
   }
   let userOptions
   if (user) {
     userOptions = (
       <nav className={`nav-link ${headerClass}`}>
-        <div className="Nav-text">
+        <div className= {`nav-link ${textClass}`}>
           <NavLink to="/" className={`nav-link ${navbarClass}`}>
             Home
           </NavLink>
@@ -61,7 +68,7 @@ const Nav = ({ user, handleLogOut }) => {
   }
   const publicOptions = (
     <nav className={`nav-link ${headerClass}`}>
-      <div className="Nav-text">
+      <div className= {`nav-link ${textClass}`}>
         <NavLink exact to="/" className={`nav-link ${navbarClass}`}>
           Home
         </NavLink>

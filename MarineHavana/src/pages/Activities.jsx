@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from 'react'
 import Search from '../components/Search'
 import axios from 'axios'
 import Activity from '../components/Activity'
+import '../components/Activity.css'
 const Activities = () => {
   let nav = useNavigate()
 
@@ -50,23 +51,20 @@ const Activities = () => {
   console.log('This is the event', event)
 
   return (
-    <div>
+    <div className='activities-background'>
       <h1>Activity List</h1>
       <Search onSubmit={handleSubmit} searchRef={searchRef} />
       {clicked ? (
         searchRes.length > 0 ? (
-          searchRes.map((ev) => <Activity key={ev._id} ev={ev} />)
+          searchRes.map((event) => <Activity key={event._id} event={event} />)
         ) : (
           <h1>No Result Found</h1>
         )
       ) : (
-        event.map((ev) => (
-          <>
-            <Activity key={ev._id} ev={ev} />
-          </>
-        ))
+        <>
+          <Activity key={event._id} event={event} />
+        </>
       )}
-
       <button onClick={handleCreate}>Create Surface Activity</button>
     </div>
   )
