@@ -48,15 +48,14 @@ const Activities = () => {
   const handleCreate = () => {
     nav('/createActivity')
   }
-  console.log('This is the event', event)
 
   return (
-    <div className='activities-background'>
+    <div className="activities-background">
       <h1>Activity List</h1>
       <Search onSubmit={handleSubmit} searchRef={searchRef} />
       {clicked ? (
         searchRes.length > 0 ? (
-          searchRes.map((event) => <Activity key={event._id} event={event} />)
+          <Activity key={searchRes._id} event={searchRes} />
         ) : (
           <h1>No Result Found</h1>
         )
