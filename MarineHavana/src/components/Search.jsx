@@ -1,6 +1,6 @@
 const Search = ({ onSubmit, searchRef }) => {
   return (
-    <form onSubmit={onSubmit}>
+    <form className="search" onSubmit={onSubmit}>
       <input
         className="searchTerm"
         type="text"
