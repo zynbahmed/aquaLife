@@ -75,6 +75,7 @@ header nav a {
 .home-navbar {
   color: rgb(255, 255, 255); /* Change the text color to blue */
   text-decoration: none;
+  text-decoration: none;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -83,6 +84,8 @@ header nav a {
 }
 
 .about-navbar {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-family: 'Montserrat', sans-serif;
@@ -204,10 +207,14 @@ video{
 #update-form {
   width: 300px;
   margin: 0 auto;
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  padding-right: 84px;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  align-items: center; /* Center items horizontally */
 }
 
 #update-form div {
@@ -216,31 +223,59 @@ video{
 
 #update-form label {
   display: block;
-  font-weight: bold;
   margin-bottom: 5px;
+}
+
+.account-title {
+  font-size: 24px;
+  text-align: left;
+  color: #10151d;
+}
+
+.account-description {
+  font-size: 16px;
+  text-align: left;
+  color: #555;
+  padding-top: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 #update-form input[type='text'],
 #update-form input[type='email'],
 #update-form input[type='password'] {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 15px;
+  border: 1px solid #eaebf0;
+  border-bottom: 1px solid #eaebf0;
   border-radius: 4px;
+  color: #000000;
+  background-color: #eaebf0;
+}
+
+#update-form input[type='text']::placeholder,
+#update-form input[type='email']::placeholder,
+#update-form input[type='password']::placeholder {
+  color: #606167; /* Change the color of the placeholder text */
 }
 
 #update-form button[type='submit'] {
-  background-color: #10151d;
-  color: #fff;
+  background-color: #4399f6;
+  color: #000000;
   border: none;
-  padding: 12px 20px;
+  width: 330px;
+  padding-top: 13px;
+  padding-bottom: 13px;
   font-size: 16px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 16px;
+  font-weight: 550;
+  font-size: 15px;
 }
 
 #update-form button[type='submit']:hover {
-  background-color: #2d428f;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .update-form-img {
