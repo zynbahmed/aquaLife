@@ -1,49 +1,25 @@
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from "react-router-dom"
 
 const Nav = ({ user, handleLogOut }) => {
   const location = useLocation()
 
-  let navbarClass = ''
-  let headerClass = ''
-  let textClass = ''
+  let navbarClass = ""
+  let headerClass = ""
+  let textClass = ""
 
-  if (location.pathname === '/') {
-    navbarClass = 'home-navbar'
-    headerClass = 'header'
-  } else if (location.pathname === '/About') {
-    navbarClass = 'about-navbar'
-    headerClass = 'header2'
-    textClass= 'header-text'
-  } else if (location.pathname === '/register') {
-    navbarClass = 'about-navbar'
-    headerClass = 'header2'
-    textClass= 'header-text'
-  } else if (location.pathname === '/activities') {
-    navbarClass = 'about-navbar'
-    headerClass = 'header2'
-    textClass= 'header-text'
-  } else if (location.pathname === '/Profile') {
-    navbarClass = 'about-navbar'
-    headerClass = 'header2'
-    textClass= 'header-text'
-  } else if (location.pathname === '/login') {
-    navbarClass = 'about-navbar'
-    headerClass = 'header2'
-    textClass= 'header-text'
-  } else if (location.pathname === '/cart') {
-    navbarClass = 'about-navbar'
-    headerClass = 'header2'
-    textClass= 'header-text'
-  } else if (location.pathname === '/createActivity') {
-    navbarClass = 'about-navbar'
-    headerClass = 'header2'
-    textClass= 'header-text'
+  if (location.pathname === "/") {
+    navbarClass = "home-navbar"
+    headerClass = "header"
+  } else {
+    navbarClass = "about-navbar"
+    headerClass = "header2"
+    textClass = "header-text"
   }
   let userOptions
   if (user) {
     userOptions = (
       <nav className={`nav-link ${headerClass}`}>
-        <div className= {`nav-link ${textClass}`}>
+        <div className={`nav-link ${textClass}`}>
           <NavLink to="/" className={`nav-link ${navbarClass}`}>
             Home
           </NavLink>
@@ -72,7 +48,7 @@ const Nav = ({ user, handleLogOut }) => {
   }
   const publicOptions = (
     <nav className={`nav-link ${headerClass}`}>
-      <div className= {`nav-link ${textClass}`}>
+      <div className={`nav-link ${textClass}`}>
         <NavLink exact to="/" className={`nav-link ${navbarClass}`}>
           Home
         </NavLink>
