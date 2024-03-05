@@ -53,9 +53,10 @@
   border-bottom: 1px solid #e6e6e6;
 }
 
-about-navbar nav a {
+img {
+  width: 500px;
+  height: 500px;
 }
-
 .header {
   position: absolute;
   top: 60px;
@@ -73,7 +74,7 @@ header nav a {
 
 .home-navbar {
   color: rgb(255, 255, 255); /* Change the text color to blue */
-  text-decoration: none; 
+  text-decoration: none;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -82,8 +83,8 @@ header nav a {
 }
 
 .about-navbar {
-  color: rgb(0, 0, 0); 
-  text-decoration: none; 
+  color: rgb(0, 0, 0);
+  text-decoration: none;
   font-family: 'Montserrat', sans-serif;
   border-bottom: 1.5px solid #4399f6;
 }
@@ -125,7 +126,6 @@ html {
 .h-about {
   font-size: 50px;
   color: #ffffff;
-  
 }
 
 .about-main {
@@ -188,7 +188,6 @@ video{
   color: #ffffff;
   text-decoration: none;
   transition: background-color 0.3s;
-
 }
 
 .cta.alt {
@@ -199,7 +198,6 @@ video{
   background-color: #ffffff;
   color: #000000;
 }
-
 
 /* form style */
 
