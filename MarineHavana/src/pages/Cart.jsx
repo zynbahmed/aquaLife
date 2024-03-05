@@ -1,5 +1,4 @@
 import Client from '../services/api'
-import Profiles from './Profile'
 
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
@@ -31,30 +30,33 @@ const Cart = ({ user, cart, setCart }) => {
     navigate('./Profile')
   }
 
-  return cart ? (
+  return (
     <div>
-      {cart.map((book) => (
-        <div>
-          <h1>{book.title}</h1>
-          <h3>{book.description}</h3>
-          <h2>${book.price}</h2>
-          <img src={book.image} alt="" />
-          <label htmlFor="quantity"></label>
-          <input
-            type="number"
-            id="quantity"
-            min={1}
-            value={book.userQty}
-            onChange={(e) => {
-              handleClick(book._id, e.target.value)
-            }}
-          />
-        </div>
-      ))}
-      <button onClick={buy}>BOOOUUYYY</button>
+      {/* Conditionally render cart details based on cart length */}
+      {cart.length > 0 ? (
+        <>
+          {cart.map((book) => (
+            <div key={book._id}>
+              <h1>{book.title}</h1>
+              <h3>{book.description}</h3>
+              <h2>${book.price}</h2>
+              <img src={book.image} alt="" />
+              <label htmlFor="quantity">Quantity:</label>
+              <input
+                type="number"
+                id="quantity"
+                min={1}
+                value={book.userQty}
+                onChange={(e) => handleClick(book._id, e.target.value)}
+              />
+            </div>
+          ))}
+          <button onClick={buy}>BUY</button>
+        </>
+      ) : (
+        <h2>Cart Empty</h2>
+      )}
     </div>
-  ) : (
-    <h2>Cart Empty</h2>
   )
 }
 
