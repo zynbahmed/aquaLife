@@ -432,3 +432,40 @@ video{
 .searchButton:hover {
   opacity: 0.8;
 }
+
+/* Add Activity Form */
+
+
+/* form style */
+
+
+#update-form input[type='text'],
+#update-form textarea[type='description'],
+#update-form input[type='number'] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #eaebf0;
+  border-bottom: 1px solid #eaebf0;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #eaebf0;
+  font-family: 'Arial', sans-serif; 
+}
+
+#update-form input[type='text']::placeholder,
+#update-form textarea[type='description']::placeholder,
+#update-form input[type='number']::placeholder {
+  color: #606167; /* Change the color of the placeholder text */
+}
+
+
+.background-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.222), rgba(0, 0, 0, 0.3)),
+    url(images/2.jpg) center no-repeat;
+  background-size: cover;
+}
