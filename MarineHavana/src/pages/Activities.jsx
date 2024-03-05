@@ -24,6 +24,8 @@ const Activities = () => {
       })
   }, [])
 
+  console.log('ok')
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const searchTerm = searchRef.current.value.toLowerCase()
@@ -38,6 +40,7 @@ const Activities = () => {
     let allList = await axios.get('http://localhost:3001/activities')
     // console.log(allList)
     setEvent(allList.data)
+    console.log(event)
   }
 
   useEffect(() => {
@@ -47,7 +50,6 @@ const Activities = () => {
   const handleCreate = () => {
     nav('/createActivity')
   }
-  console.log('This is the event', event)
 
   return (
     <div>
@@ -55,18 +57,15 @@ const Activities = () => {
       <Search onSubmit={handleSubmit} searchRef={searchRef} />
       {clicked ? (
         searchRes.length > 0 ? (
-          searchRes.map((ev) => <Activity key={ev._id} ev={ev} />)
+          searchRes.map((event) => <Activity key={event._id} event={event} />)
         ) : (
           <h1>No Result Found</h1>
         )
       ) : (
-        event.map((ev) => (
-          <>
-            <Activity key={ev._id} ev={ev} />
-          </>
-        ))
+        <>
+          <Activity key={event._id} event={event} />
+        </>
       )}
-
       <button onClick={handleCreate}>Create Surface Activity</button>
     </div>
   )

@@ -19,8 +19,7 @@ const Cart = ({ user, cart, setCart }) => {
 
   useEffect(() => {
     return
-  }),
-    [click]
+  }, [click])
 
   const buy = async () => {
     const request = { cart, user }
