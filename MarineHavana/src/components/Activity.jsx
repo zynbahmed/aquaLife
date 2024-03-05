@@ -13,18 +13,13 @@ const Activity = ({ event }) => {
           </div>
           <div className="activity-container">
             <div className="activity-card">
-              <Link to={ev._id}>
-                <div className="article-body">
-                  <h1>{ev.title}</h1>
-                  <p className="price">{ev.price}</p>
-                  <div>
-                    <a href="#" className="read-more">
-                      {' '}
-                      Read more
-                    </a>
-                  </div>
-                </div>
-              </Link>
+              <div className="article-body">
+                <h1>{ev.title}</h1>
+                <p className="price">{ev.price}</p>
+                <Link to={ev._id} className="read-more">
+                  <div>Read more</div>
+                </Link>
+              </div>
             </div>
           </div>
         </article>
