@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
-import Client from '../services/api'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import axios from "axios"
+import Client from "../services/api"
+import { useNavigate } from "react-router-dom"
 
-import Reviews from './Reviews'
-import AddReview from './AddReview'
+import Reviews from "./Reviews"
+import AddReview from "./AddReview"
 
 const ActivityDetails = (props) => {
   let navigate = useNavigate()
   let { activity_id } = useParams()
-  const [act, setAct] = useState('')
+  const [act, setAct] = useState("")
   const [item, setItems] = useState([])
 
   useEffect(() => {
@@ -29,18 +29,22 @@ const ActivityDetails = (props) => {
 
   const handleSubmit = () => {
     Client.delete(`/activities/${activity_id}`, {}).then((response) => {
-      navigate('/activities')
+      navigate("/activities")
     })
   }
   const handleUpdate = () => {
     navigate(`/activities/${activity_id}/update`)
   }
   const addCart = (act) => {
-    if (props.cart.indexOf(act) !== -1) {
-      return
+    const existingItemIndex = props.cart.findIndex(
+      (itemInCart) => itemInCart._id === act._id
+    ) 
+    if (existingItemIndex !== -1) {
+      return 
     }
     act.userQty = 1
     props.setCart([...props.cart, act])
+    navigate("/activities")
   }
 
   return act ? (
