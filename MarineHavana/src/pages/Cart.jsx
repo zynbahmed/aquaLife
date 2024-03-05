@@ -1,12 +1,10 @@
-import Client from '../services/api'
+import Client from "../services/api"
 
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
 
 const Cart = ({ user, cart, setCart }) => {
   let navigate = useNavigate()
-
-  const [click, setClick] = useState(false)
 
   const handleClick = (id, qty) => {
     qty = parseInt(qty)
@@ -16,17 +14,12 @@ const Cart = ({ user, cart, setCart }) => {
     setCart(arrayCart)
   }
 
-  useEffect(() => {
-    return
-  }, [click])
-
   const buy = async () => {
     const request = { cart, user }
     console.log(request)
-    await Client.post('/bookings', request)
-    setClick(true)
+    await Client.post("/bookings", request)
+    navigate("/")
     setCart([])
-    navigate('./Profile')
   }
 
   return (
@@ -37,7 +30,6 @@ const Cart = ({ user, cart, setCart }) => {
           {cart.map((book) => (
             <div key={book._id}>
               <h1>{book.title}</h1>
-              <h3>{book.description}</h3>
               <h2>${book.price}</h2>
               <img src={book.image} alt="" />
               <label htmlFor="quantity">Quantity:</label>
