@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom"
 import Reviews from "./Reviews"
 import AddReview from "./AddReview"
 
+import "../Details.css"
+
 const ActivityDetails = (props) => {
   let navigate = useNavigate()
   let { activity_id } = useParams()
@@ -38,9 +40,9 @@ const ActivityDetails = (props) => {
   const addCart = (act) => {
     const existingItemIndex = props.cart.findIndex(
       (itemInCart) => itemInCart._id === act._id
-    ) 
+    )
     if (existingItemIndex !== -1) {
-      return 
+      return
     }
     act.userQty = 1
     props.setCart([...props.cart, act])
@@ -49,19 +51,33 @@ const ActivityDetails = (props) => {
 
   return act ? (
     <div>
-      <div>
-        <h1>{act.title}</h1>
-        <h3>{act.description}</h3>
-        <h3>{act.price}</h3>
-        <img src={act.image} alt="" />
-      </div>
       <button onClick={handleSubmit}>DELETE</button>
       <button onClick={handleUpdate}>UPDATE</button>
       <button onClick={() => addCart(act)}>Add to Cart</button>
-      <div>
+      <section className="album-details">
+        <div className="picture">
+          <img src={act.image} alt="" />
+        </div>
+        <div className="details-right">
+          <div className="detail">
+            <div className="label">Title:</div>
+            <div className="value">{act.title}</div>
+          </div>
+          <div className="detail">
+            <div className="label">Descreption:</div>
+            <div className="value">{act.description}</div>
+          </div>
+          <div className="detail">
+            <div className="label">Price:</div>
+            <div className="value">${act.price}</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reviews-section">
         <Reviews reviews={act.reviews} />
         <AddReview activity_id={activity_id} ali={ali} />
-      </div>
+      </section>
     </div>
   ) : null
 }
