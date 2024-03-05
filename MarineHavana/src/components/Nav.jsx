@@ -34,6 +34,10 @@ const Nav = ({ user, handleLogOut }) => {
     navbarClass = 'about-navbar'
     headerClass = 'header2'
     textClass= 'header-text'
+  } else if (location.pathname === '/createActivity') {
+    navbarClass = 'about-navbar'
+    headerClass = 'header2'
+    textClass= 'header-text'
   }
   let userOptions
   if (user) {

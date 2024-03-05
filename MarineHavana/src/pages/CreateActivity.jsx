@@ -32,43 +32,54 @@ const CreateActivity = (props) => {
   const newActivity = props.newActivity
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h1>Add Activity</h1>
-        <div>
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            id={'title'}
-            placeholder={'title'}
-            ref={titleRef}
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id={'description'}
-            placeholder={'description'}
-            cols="30"
-            rows="10"
-            ref={descRef}
-          ></textarea>
-        </div>
-        <div>
-          <label htmlFor="price">Price:</label>
-          <input
-            type="number"
-            id={'price'}
-            placeholder={'price'}
-            ref={priceRef}
-          />
-        </div>
-        <div>
-          <label htmlFor="image">Image:</label>
-          <input type="text" id={'image'} placeholder={'image'} ref={imgRef} />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+    <div className="background-image">
+      <section id="update-form">
+        <form onSubmit={handleSubmit}>
+          <h1 class="account-title">Create Your Activity</h1>
+          <p class="account-description">
+            Enter the title, description and the price of your activity to create your activity
+          </p>
+          <div>
+            <label htmlFor="title"></label>
+            <input
+              type="text"
+              id={'title'}
+              placeholder={'title'}
+              ref={titleRef}
+            />
+          </div>
+          <div>
+            <label htmlFor="description"></label>
+            <textarea
+              type="description"
+              id={'description'}
+              placeholder={'description'}
+              cols="30"
+              rows="10"
+              ref={descRef}
+            ></textarea>
+          </div>
+          <div>
+            <label htmlFor="price"></label>
+            <input
+              type="number"
+              id={'price'}
+              placeholder={'price'}
+              ref={priceRef}
+            />
+          </div>
+          <div>
+            <label htmlFor="image"></label>
+            <input
+              type="text"
+              id={'image'}
+              placeholder={'image'}
+              ref={imgRef}
+            />
+          </div>
+          <button type="submit">Create Activity</button>
+        </form>
+      </section>
     </div>
   )
 }
