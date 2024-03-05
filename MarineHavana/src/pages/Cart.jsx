@@ -1,8 +1,14 @@
 import Client from '../services/api'
+import Profiles from './Profile'
+
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Cart = ({ user, cart, setCart }) => {
   let navigate = useNavigate()
+
+  const [click, setClick] = useState(false)
+
   const handleClick = (id, qty) => {
     qty = parseInt(qty)
     const arrayCart = [...cart]
@@ -11,15 +17,21 @@ const Cart = ({ user, cart, setCart }) => {
     setCart(arrayCart)
   }
 
+  useEffect(() => {
+    return
+  }),
+    [click]
+
   const buy = async () => {
     const request = { cart, user }
     console.log(request)
     await Client.post('/bookings', request)
-    // setCart([''])
-    navigate('http://localhost:5173/Profile')
+    setClick(true)
+    setCart([])
+    navigate('./Profile')
   }
 
-  return (
+  return cart ? (
     <div>
       {cart.map((book) => (
         <div>
@@ -41,6 +53,8 @@ const Cart = ({ user, cart, setCart }) => {
       ))}
       <button onClick={buy}>BOOOUUYYY</button>
     </div>
+  ) : (
+    <h2>Cart Empty</h2>
   )
 }
 
