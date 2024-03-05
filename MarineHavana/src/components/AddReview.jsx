@@ -31,12 +31,13 @@ const AddReview = ({ activity_id, ali }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="content">Content:</label>
-        <input
+        <label htmlFor="content">Review:</label>
+        <textarea
           id="content"
           type="text"
           onChange={handleChange}
           value={review.content}
+          rows={8}
         />
         <button type="submit">Add Review</button>
       </form>

@@ -57,43 +57,58 @@ const UpdateActivity = () => {
     imgRef.current.value = null
   }
   return (
-    <div>
+    <div className="background-image">
       {activityDetails ? (
-        <div>
+        <section id="update-form">
           <form onSubmit={handleUpdateDate}>
-            <label htmlFor="title">Title:</label>
-            <input
-              defaultValue={activityDetails.title}
-              type="text"
-              id="title"
-              ref={titleRef}
-            />
-            <label htmlFor="description">Description:</label>
-            <input
-              type="text"
-              id="description"
-              defaultValue={activityDetails.description}
-              ref={desRef}
-            />
-            <label htmlFor="price">Price:</label>
-            <input
-              type="text"
-              id="price"
-              defaultValue={activityDetails.price}
-              ref={priceRef}
-            />
-            <label htmlFor="image">Image:</label>
-            <input
-              type="text"
-              id={"image"}
-              defaultValue={activityDetails.image}
-              ref={imgRef}
-            />
+            <h1 class="account-title">
+              Update {activityDetails.title} Activity
+            </h1>
+            <p class="account-description">
+              Enter the title, description and the price of your activity to
+              create your activity
+            </p>
             <div>
-              <button type="submit">Update</button>
+              <label htmlFor="title">Title:</label>
+              <input
+                defaultValue={activityDetails.title}
+                type="text"
+                id="title"
+                ref={titleRef}
+              />
             </div>
+            <div>
+              <label htmlFor="description">Description:</label>
+              <textarea
+                type="text"
+                id="description"
+                defaultValue={activityDetails.description}
+                cols="30"
+                rows="10"
+                ref={desRef}
+              ></textarea>
+            </div>
+            <div>
+              <label htmlFor="price">Price:</label>
+              <input
+                type="text"
+                id="price"
+                defaultValue={activityDetails.price}
+                ref={priceRef}
+              />
+            </div>
+            <div>
+              <label htmlFor="image">Image:</label>
+              <input
+                type="text"
+                id={"image"}
+                defaultValue={activityDetails.image}
+                ref={imgRef}
+              />
+            </div>
+            <button type="submit">Update</button>
           </form>
-        </div>
+        </section>
       ) : null}
     </div>
   )
