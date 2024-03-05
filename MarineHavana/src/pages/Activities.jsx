@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from 'react'
 import Search from '../components/Search'
 import axios from 'axios'
 import Activity from '../components/Activity'
+import '../components/Activity.css'
 const Activities = () => {
   let nav = useNavigate()
 
@@ -24,8 +25,6 @@ const Activities = () => {
       })
   }, [])
 
-  console.log('ok')
-
   const handleSubmit = (e) => {
     e.preventDefault()
     const searchTerm = searchRef.current.value.toLowerCase()
@@ -40,7 +39,6 @@ const Activities = () => {
     let allList = await axios.get('http://localhost:3001/activities')
     // console.log(allList)
     setEvent(allList.data)
-    console.log(event)
   }
 
   useEffect(() => {
@@ -52,12 +50,12 @@ const Activities = () => {
   }
 
   return (
-    <div>
+    <div className="activities-background">
       <h1>Activity List</h1>
       <Search onSubmit={handleSubmit} searchRef={searchRef} />
       {clicked ? (
         searchRes.length > 0 ? (
-          searchRes.map((event) => <Activity key={event._id} event={event} />)
+          <Activity key={searchRes._id} event={searchRes} />
         ) : (
           <h1>No Result Found</h1>
         )

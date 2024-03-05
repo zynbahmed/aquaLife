@@ -1,17 +1,35 @@
 import { Link } from 'react-router-dom'
-import './Activity.css'
+// import './Activity.module.css'
 
 const Activity = ({ event }) => {
   return (
-    <div>
+    <section className="articles">
       {event.map((ev) => (
-        <Link to={ev._id}>
-          <h1>{ev.title}</h1>
-          <h1>{ev.price}</h1>
-          <img src={ev.image} alt="" />
-        </Link>
+        <article>
+          <div className="article-wrapper">
+            <figure>
+              <img src={ev.image} alt="" />
+            </figure>
+          </div>
+          <div className="activity-container">
+            <div className="activity-card">
+              <Link to={ev._id}>
+                <div className="article-body">
+                  <h1>{ev.title}</h1>
+                  <p className="price">{ev.price}</p>
+                  <div>
+                    <a href="#" className="read-more">
+                      {' '}
+                      Read more
+                    </a>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </article>
       ))}
-    </div>
+    </section>
   )
 }
 

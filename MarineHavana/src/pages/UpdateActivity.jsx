@@ -7,6 +7,7 @@ const UpdateActivity = () => {
   const titleRef = useRef(null)
   const desRef = useRef(null)
   const priceRef = useRef(null)
+  const imgRef = useRef(null)
 
   const [activityDetails, setActivityDetails] = useState({})
   const [activities, setActivities] = useState([])
@@ -44,6 +45,7 @@ const UpdateActivity = () => {
       title: titleRef.current.value,
       description: desRef.current.value,
       price: priceRef.current.value,
+      image: imgRef.current.value,
     }).then((response) => {
       // console.log(response)
       navigate("/activities")
@@ -52,6 +54,7 @@ const UpdateActivity = () => {
     titleRef.current.value = null
     desRef.current.value = null
     priceRef.current.value = null
+    imgRef.current.value = null
   }
   return (
     <div>
@@ -78,6 +81,13 @@ const UpdateActivity = () => {
               id="price"
               defaultValue={activityDetails.price}
               ref={priceRef}
+            />
+            <label htmlFor="image">Image:</label>
+            <input
+              type="text"
+              id={"image"}
+              defaultValue={activityDetails.image}
+              ref={imgRef}
             />
             <div>
               <button type="submit">Update</button>

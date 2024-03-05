@@ -1,5 +1,5 @@
 /* body {
-  margin: 10px;
+background-color: white;
 } */
 
 * {
@@ -47,9 +47,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: rgb(255, 255, 255);
-  padding-top: 20px;
+  padding-top: 25px;
   padding-left: 998px;
-  padding-bottom: 20px;
+  padding-bottom: 25px;
   border-bottom: 1px solid #e6e6e6;
 }
 
@@ -64,6 +64,12 @@
 
 header nav a {
   margin: 0 1em;
+}
+
+.header-text {
+  position: absolute;
+  top: 14px;
+  right: 50px;
 }
 
 /* .Nav-text {
