@@ -33,12 +33,12 @@ const Profiles = ({ user }) => {
               <th>Bookings</th>
             </tr>
           </thead>
-          {user.bookings ? (
+          {user.bookings && user.bookings.length > 0 ? (
             <tbody>
               <Bookings user={user} />
             </tbody>
           ) : (
-            <h5>No Booking has been made!</h5>
+            <h3>No Booking has been made!</h3>
           )}
         </table>
       </section>
