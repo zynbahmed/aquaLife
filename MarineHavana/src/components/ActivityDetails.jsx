@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import axios from "axios"
-import Client from "../services/api"
-import { useNavigate } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import Client from '../services/api'
+import { useNavigate } from 'react-router-dom'
 
-import Reviews from "./Reviews"
-import AddReview from "./AddReview"
+import Reviews from './Reviews'
+import AddReview from './AddReview'
 
-import "../Details.css"
+import '../Details.css'
 
 const ActivityDetails = (props) => {
   let navigate = useNavigate()
   let { activity_id } = useParams()
-  const [act, setAct] = useState("")
+  const [act, setAct] = useState('')
   const [item, setItems] = useState([])
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const ActivityDetails = (props) => {
 
   const handleSubmit = () => {
     Client.delete(`/activities/${activity_id}`, {}).then((response) => {
-      navigate("/activities")
+      navigate('/activities')
     })
   }
   const handleUpdate = () => {
@@ -46,45 +46,46 @@ const ActivityDetails = (props) => {
     }
     act.userQty = 1
     props.setCart([...props.cart, act])
-    navigate("/activities")
+    navigate('/activities')
   }
 
   return act ? (
-    <div>
-      {props.user.userType === "admin" && (
-        <div>
-          <button onClick={handleSubmit}>DELETE</button>
-          <button onClick={handleUpdate}>UPDATE</button>
-        </div>
-      )}
-{props.user.userType === "user" && (
-        <button onClick={() => addCart(act)}>Add to Cart</button>
-      )}
-      
-      <section className="album-details">
-        <div className="picture">
-          <img src={act.image} alt="" />
-        </div>
-        <div className="details-right">
-          <div className="detail">
-            <div className="label">Title:</div>
-            <div className="value">{act.title}</div>
+    <div className="container1">
+      <div className="centered-content">
+        {props.user.userType === 'admin' && (
+          <div>
+            <button onClick={handleSubmit}>DELETE</button>
+            <button onClick={handleUpdate}>UPDATE</button>
           </div>
-          <div className="detail">
-            <div className="label">Descreption:</div>
-            <div className="value">{act.description}</div>
-          </div>
-          <div className="detail">
-            <div className="label">Price:</div>
-            <div className="value">${act.price}</div>
-          </div>
-        </div>
-      </section>
+        )}
+        {props.user.userType === 'user' && (
+          <button onClick={() => addCart(act)}>Add to Cart</button>
+        )}
 
-      <section class="reviews-section">
-        <Reviews reviews={act.reviews} />
-        <AddReview activity_id={activity_id} ali={ali} />
-      </section>
+        <section>
+          <div className="detail-title">
+            <div className="label">{act.title}</div>
+          </div>
+
+          <div className="detail-picture">
+            <img src={act.image} alt="" />
+          </div>
+          <div className="details-description">
+            <div className="detail">
+              <div className="value">{act.description}</div>
+            </div>
+            <div className="price-detail">
+              <h4 className="price-label">Price:</h4>
+              <div className="price-value">${act.price}</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="reviews-section">
+          <Reviews reviews={act.reviews} />
+          <AddReview activity_id={activity_id} ali={ali} />
+        </section>
+      </div>
     </div>
   ) : null
 }

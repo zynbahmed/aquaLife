@@ -1,12 +1,14 @@
 const Reviews = ({ reviews }) => {
   return reviews && reviews.length > 0 ? (
     <div>
-      {reviews.map((review) => (
-        <div key={review._id}>
-          <h3>Content: {review.content}</h3>
-        </div>
+      <h3 className="reviews-title">customer reviews</h3>
+      {reviews.map((review) => ( 
+        <div className="centered-review" key={review._id}>
+        <h3 className="review-content"> {review.content}</h3>
+      </div>
       ))}
     </div>
+    
   ) : (
     <p>No reviews available</p>
   )
