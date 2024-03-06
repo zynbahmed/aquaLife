@@ -5,13 +5,16 @@ const Search = ({ onSubmit, searchRef }) => {
         className="searchTerm"
         type="text"
         ref={searchRef}
-        placeholder="Search Activites."
+        placeholder="SEARCH ACTIVITIES"
       />
-      <button className="searchButton" type="submit">
-        Search
+      <button className="searchButton searchButton1" type="submit">
+        SEARCH
       </button>
     </form>
   )
 }
 
 export default Search
+
+
+

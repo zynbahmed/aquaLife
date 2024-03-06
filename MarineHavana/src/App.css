@@ -402,35 +402,70 @@ video{
   background-size: cover;
 }
 
+/* search  */
 .searchTerm {
-  width: 80%;
-  border: 3px solid #6e6e6e;
-  border-right: none;
-  padding: 5px;
-  height: 30px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: #9dbfaf;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.746);
+  padding: 0.5em 0.2em;
+  width: auto;
+  transition: all 0.2s;
+  font-size: 1.3rem;
+  color: #eee;
 }
 
+.searchTerm:active,
 .searchTerm:focus {
-  color: black;
+  outline: none;
+
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.searchTerm::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.2s;
+  font-size: 15px;
+}
+
+.searchTerm:active::placeholder,
+.searchTerm:focus::placeholder {
+  color: rgb(255, 255, 255);
+  font-size: 15px;
+}
+
+/* main {
+  padding: 2em 0;
+} */
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.searchTerm {
+  width: 80%;
+  margin: 0 1em;
 }
 
 .searchButton {
-  width: 80px;
-  height: 46px;
-  border: 1px solid #575757;
-  background: #575757;
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
+  margin-top: 16px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 2px solid white;
+  font-size: 0.9rem;
   cursor: pointer;
-  font-size: 20px;
+  height: 30px;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
 }
 
+
+
 .searchButton:hover {
-  opacity: 0.8;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 /* Add Activity Form */
@@ -440,6 +475,10 @@ video{
 #update-form input[type="text"],
 #update-form textarea[type="description"],
 #update-form input[type="number"] {
+
+#update-form input[type='text'],
+#update-form textarea[type='description'],
+#update-form input[type='number'] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -448,6 +487,7 @@ video{
   color: #000000;
   background-color: #eaebf0;
   font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
 #update-form input[type="text"]::placeholder,
@@ -467,90 +507,32 @@ video{
   background-size: cover;
 }
 
-.avatar-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.create-surface-activity {
+  padding-top: 2em;
+  padding-left: 4.5em;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #eee;
 }
 
-.avatar-container img {
-  width: 100px;
-  height: 100px;
+
+.create-surface-button {
+  margin-top: 16px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.1em;
+  border: 2px solid white;
+  font-size: 0.9rem;
   cursor: pointer;
-  border: 2px solid #ddd;
-  border-radius: 100%;
-  margin: 0 auto;
-  margin-top: 10px;
-}
-
-.pfp {
-  width: 100px;
-  height: 100px;
-  cursor: pointer;
-  border: 2px solid #ddd;
-  border-radius: 100%;
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-
-.avatar-container img.selected {
-  border-color: #003166;
-  border-radius: 100%;
-}
-
-#update-user {
-  width: 400px;
-  margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  padding-left: 50px;
-  padding-right: 84px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
-  align-items: center; /* Center items horizontally */
-}
-
-#update-user div {
-  margin-bottom: 25px;
-}
-
-#update-user label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-#update-user input[type="text"] {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #eaebf0;
-  border-bottom: 1px solid #eaebf0;
-  border-radius: 4px;
-  color: #000000;
-  background-color: #eaebf0;
-  font-family: "Arial", sans-serif;
-}
-
-#update-user input[type="text"]::placeholder {
-  color: #606167; /* Change the color of the placeholder text */
-}
-
-#update-user button[type="submit"] {
-  background-color: #4399f6;
-  color: #000000;
-  border: none;
-  width: 430px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 16px;
-  font-weight: 550;
-  font-size: 15px;
-}
-
-#update-user button[type="submit"]:hover {
+  height: 30px;
+  color: rgb(255, 255, 255);
   background-color: #000000;
-  color: #ffffff;
+  margin-left: 6.5em;
+  margin-bottom: 10em;
 }
+
+.create-surface-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
