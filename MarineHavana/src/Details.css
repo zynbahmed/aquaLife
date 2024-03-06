@@ -1,48 +1,3 @@
-.album-details {
-  background-color: #fafdff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  position: relative;
-  font-size: larger;
-}
-
-.album-details .picture {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.album-details .picture img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.album-details .details-right {
-  margin-left: 20px;
-}
-
-.album-details .detail {
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.album-details .label {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.album-details .value {
-  color: #211423;
-}
-
 .reviews-section,
 .songs-section {
   background-color: #fafdff;
@@ -135,7 +90,8 @@
 }
 
 .booking-section th,
-.booking-section td {
+.booking-section td,
+.booking-section p {
   border-bottom: 1px solid #ccc;
   padding: 8px 0;
   text-align: left;
@@ -143,4 +99,130 @@
 
 .booking-section th {
   font-weight: bold;
+}
+
+/* .details-container {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0 auto; 
+  width: 40%;
+}
+
+.details-container button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #3f51b5;
+  color: #fff;
+  margin-bottom: 15px; 
+}
+
+.picture {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.picture img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.details-right {
+  margin-left: 20px;
+}
+
+.detail {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.value {
+  color: #211423;
+} */
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #190636;
+  font-family: arial;
+  box-sizing: border-box;
+}
+.card-container {
+  width: 90%;
+  height: 85%;
+  background: #fff;
+  border-radius: 6px;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 1px 10px 1px #000;
+  overflow: hidden;
+  display: inline-block;
+}
+.upper-container {
+  height: 150px;
+  background: #000000;
+}
+.image-container {
+  background: white;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 5px;
+  transform: translate(100px, 100px);
+}
+.image-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.lower-container {
+  height: 200px;
+  background: #fff;
+  padding: 20px;
+  padding-top: 40px;
+  text-align: center;
+}
+.lower-container h3,
+h4 {
+  box-sizing: border-box;
+  line-height: 0.6;
+  font-weight: lighter;
+  margin: 13px;
+}
+.lower-container h4 {
+  color: #4399f6;
+  opacity: 0.6;
+  font-weight: bold;
+}
+.lower-container button {
+  padding: 12px 20px;
+  background: #000000;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+}
+.lower-container button:hover {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
 }

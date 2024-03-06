@@ -10,38 +10,36 @@ const Profiles = ({ user }) => {
   }
   return (
     <div>
-      <div>
-        <button onClick={handleUpdate}>UPDATE</button>
-        <section className="album-details">
-          <div className="picture">
-            <img src={user.profilePic} />
+      <div class="card-container">
+        <div class="upper-container">
+          <div class="image-container">
+            <img src={user.profilePic} alt="Profile picture" />
           </div>
-          <div className="details-right">
-            <div className="detail">
-              <div className="label">Username:</div>
-              <div className="value">{user.name}</div>
-            </div>
-            <div className="label">E-mail:</div>
-            <div className="value">{user.email}</div>
+        </div>
+        <div class="lower-container">
+          <div>
+            <h3>{user.name}</h3>
+            <h4>{user.email}</h4>
           </div>
-        </section>
+          <div>
+            <button onClick={handleUpdate}>UPDATE</button>
+          </div>
+          <div>
+            <section class="booking-section">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Bookings</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <Bookings user={user} />
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </div>
       </div>
-      <section class="booking-section">
-        <table>
-          <thead>
-            <tr>
-              <th>Bookings</th>
-            </tr>
-          </thead>
-          {user.bookings && user.bookings.length > 0 ? (
-            <tbody>
-              <Bookings user={user} />
-            </tbody>
-          ) : (
-            <h3>No Booking has been made!</h3>
-          )}
-        </table>
-      </section>
     </div>
   )
 }
