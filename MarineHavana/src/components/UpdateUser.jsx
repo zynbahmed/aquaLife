@@ -1,13 +1,13 @@
-import { useRef, useState, useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
-import avatars from "../data/avatars"
-import Client from "../services/api"
+import { useRef, useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import avatars from '../data/avatars'
+import Client from '../services/api'
 
 const UpdateUser = ({ user, setUser }) => {
   const nameRef = useRef(null)
   const emailRef = useRef(null)
 
-  const [selectedImage, setSelectedImage] = useState(user.profilePic || "")
+  const [selectedImage, setSelectedImage] = useState(user.profilePic || '')
 
   const handleImageClick = (imageUrl) => {
     setSelectedImage(imageUrl)
@@ -15,7 +15,7 @@ const UpdateUser = ({ user, setUser }) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    Client.get("/Auth")
+    Client.get('/Auth')
       .then((response) => {
         // console.log(response)
         setUser(response.data)
@@ -35,10 +35,10 @@ const UpdateUser = ({ user, setUser }) => {
       const updatedUser = { ...user, profilePic: selectedImage }
       Client.put(`/Auth/update`, {
         name: nameRef.current.value,
-        email: emailRef.current.value,
+        email: emailRef.current.value
       }).then((response) => {
         // console.log(response)
-        navigate("/Profile")
+        navigate('/Profile')
       })
       await setUser(updatedUser)
     } catch (error) {
@@ -49,7 +49,7 @@ const UpdateUser = ({ user, setUser }) => {
     emailRef.current.value = null
   }
   return (
-    <div className="background-image">
+    <div className="background-image-profile">
       {user ? (
         <section id="update-user">
           <form onSubmit={handleUpdateDate}>
@@ -62,7 +62,7 @@ const UpdateUser = ({ user, setUser }) => {
             <img
               src={
                 selectedImage ||
-                "https://tr.rbxcdn.com/38c6edcb50633730ff4cf39ac8859840/420/420/Hat/Png"
+                'https://tr.rbxcdn.com/38c6edcb50633730ff4cf39ac8859840/420/420/Hat/Png'
               }
               alt="Profile Picture"
               className="pfp"
@@ -74,7 +74,7 @@ const UpdateUser = ({ user, setUser }) => {
                   key={image.url}
                   src={image.url}
                   alt={image.alt}
-                  className={selectedImage === image.url ? "selected" : ""}
+                  className={selectedImage === image.url ? 'selected' : ''}
                   onClick={() => handleImageClick(image.url)}
                 />
               ))}

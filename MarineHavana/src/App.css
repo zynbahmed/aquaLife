@@ -308,6 +308,10 @@ video{
   background-size: cover;
 }
 
+.background-image-profile {
+  margin: 3% auto;
+}
+
 /* update-form2 */
 
 #update-form2 {
