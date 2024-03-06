@@ -1,7 +1,9 @@
-import Client from "../services/api"
+import Client from '../services/api'
+import '../Cart.css'
+// import '../components/Activity.css'
 
-import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Cart = ({ user, cart, setCart }) => {
   let navigate = useNavigate()
@@ -16,36 +18,59 @@ const Cart = ({ user, cart, setCart }) => {
 
   const buy = async () => {
     const request = { cart, user }
-    await Client.post("/bookings", request)
+    await Client.post('/bookings', request)
     setCart([])
-    navigate("/Profile")
+    navigate('/Profile')
+  }
+
+  const totalPrice = () => {
+    let price = 0
+    cart.forEach((el) => {
+      price = price + el.price * el.userQty
+    })
+    return price
   }
 
   return (
-    <div>
-      {/* Conditionally render cart details based on cart length */}
-      {cart.length > 0 ? (
-        <>
-          {cart.map((book) => (
-            <div key={book._id}>
-              <h1>{book.title}</h1>
-              <h2>${book.price}</h2>
-              <img src={book.image} alt="" />
-              <label htmlFor="quantity">Quantity:</label>
-              <input
-                type="number"
-                id="quantity"
-                min={1}
-                value={book.userQty}
-                onChange={(e) => handleClick(book._id, e.target.value)}
-              />
+    <div className="cart-background">
+      <section className=" ">
+        {/* Conditionally render cart details based on cart length */}
+        {cart.length > 0 ? (
+          <article className="flex">
+            {cart.map((book) => (
+              <div className="" key={book._id}>
+                <figure>
+                  <img src={book.image} alt="" />
+                </figure>
+                <div>
+                  <div>
+                    <div>
+                      <h1>{book.title}</h1>
+                      <p className="">Cost: ${book.price}</p>
+                      <label htmlFor="quantity">Quantity:</label>
+                      <input
+                        type="number"
+                        id="quantity"
+                        min={1}
+                        value={book.userQty}
+                        onChange={(e) => handleClick(book._id, e.target.value)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="">
+              <h1>Total: {totalPrice()}</h1>
+              <button className="pricebutton" onClick={buy}>
+                BUY
+              </button>
             </div>
-          ))}
-          <button onClick={buy}>BUY</button>
-        </>
-      ) : (
-        <h2>Cart Empty</h2>
-      )}
+          </article>
+        ) : (
+          <h2>Cart Empty</h2>
+        )}
+      </section>
     </div>
   )
 }

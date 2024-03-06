@@ -1,21 +1,17 @@
-import axios from "axios"
 import { useState, useEffect } from "react"
 import Client from "../services/api"
-import Activities from "../pages/Activities"
 
-const Bookings = ({ user }) => {
+const Bookings = () => {
   const [book, setBook] = useState([])
 
   useEffect(() => {
     const details = async () => {
       let selected = await Client.get("/Auth")
       setBook(selected.data)
-      console.log(selected)
     }
     details()
   }, [])
 
-  console.log(book)
   return (
     <div>
       {book?.bookings?.length > 0 &&
@@ -32,11 +28,8 @@ const Bookings = ({ user }) => {
             </td>
           </tr>
         ))}
-      <h2></h2>
     </div>
   )
 }
 
 export default Bookings
-
-// {book ? <h2>{book.bookings[0].totalPrice}</h2> : <h2>no booking</h2>}

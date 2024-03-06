@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150vh;
-  padding-top: 50px;
+  height: 109vh;
+  margin-top: 5%;
 }
 
 .centered-content {
@@ -16,7 +16,7 @@
 }
 
 .detail-picture img {
-  width: 800px; /* Adjust the width of the image */
+  width: 65%; /* Adjust the width of the image */
   height: auto; /* Maintain the aspect ratio */
   padding-bottom: 30px;
 }
@@ -80,19 +80,6 @@
   margin-bottom: 10px;
 }
 
-.my-textarea {
-  width: 100%;
-  padding: 10px;
-  resize: vertical;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-.my-textarea {
-  width: 710px; /* Set the desired width */
-  height: 50px; /* Set the desired height */
-}
-
 /* .my-button {
   background-color: #4caf50;
   color: white;
@@ -102,7 +89,7 @@
   cursor: pointer;
 } */
 
-#update-user input[type='text'] {
+#update-user input[type="text"] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -110,10 +97,10 @@
   border-radius: 4px;
   color: #000000;
   background-color: #eaebf0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-#update-user input[type='text']::placeholder {
+#update-user input[type="text"]::placeholder {
   color: #606167; /* Change the color of the placeholder text */
 }
 
@@ -129,14 +116,27 @@
   background-color: #ffffff;
 }
 
+.my-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.button {
+  margin-left: 20.4%;
+  margin-bottom: 1%;
+}
+
+.button button {
+  margin-left: 0.5%;
+}
+
 .searchButton:hover {
   background-color: #ffffff;
   color: #ffffff;
 }
 
-#update-form input[type='text'],
-#update-form textarea[type='description'],
-#update-form input[type='number'] {
+#update-form input[type="text"],
+#update-form textarea[type="description"],
+#update-form input[type="number"] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -144,10 +144,117 @@
   border-radius: 4px;
   color: #000000;
   background-color: #eaebf0;
-  font-family: 'Arial', sans-serif;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-#centered-review textarea[type='description']::placeholder {
+#centered-review textarea[type="description"]::placeholder {
   color: #606167; /* Change the color of the placeholder text */
+}
+
+body {
+  background: #f7f7f7;
+}
+.card-container {
+  width: 90%;
+  height: 85%;
+  background: #fff;
+  /* border-radius: 6px; */
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* box-shadow: 0px 1px 10px 1px #000; */
+  overflow: hidden;
+  display: inline-block;
+}
+.upper-container {
+  height: 150px;
+  background: #000000;
+}
+.image-container {
+  background: white;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 5px;
+  transform: translate(100px, 100px);
+}
+.image-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.lower-container {
+  background: #fff;
+  padding: 0.8%;
+  /* padding-top: 40px; */
+  margin-bottom: 20px;
+}
+
+.lower-container h3 {
+  line-height: 0.6;
+  font-weight: light;
+  margin-top: auto;
+  margin-left: 20%;
+}
+
+.lower-container h4 {
+  margin: 13px;
+  margin-left: 20%;
+  color: #4399f6;
+  opacity: 0.6;
+  font-weight: 900;
+}
+.lower-container button {
+  padding: 12px 20px;
+  background: #000000;
+  border: none;
+  color: white;
+  border-radius: 30px;
+  font-size: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease-in;
+  margin-left: 95%;
+  margin-top: 0.2%;
+}
+.lower-container button:hover {
+  background: transparent;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.booking-section table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.booking-section {
+  margin-top: 1%;
+  padding: 1%;
+}
+
+.booking-section th,
+.booking-section td {
+  padding: 10px;
+  text-align: left;
+}
+
+.booking-section th b,
+.booking-section td b {
+  font-weight: bold;
+}
+
+.my-textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.my-textarea {
+  width: 710px; /* Set the desired width */
+  height: 50px; /* Set the desired height */
 }

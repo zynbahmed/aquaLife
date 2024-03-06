@@ -40,6 +40,7 @@ const AddReview = ({ activity_id, ali }) => {
       onChange={handleChange}
       value={review.content}
       rows={8}
+      cols={100}
     />
     <button className="my-button" type="submit">ADD REVIEW</button>
   </form>
