@@ -5,7 +5,6 @@ import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
 
 
-//import { LoginUser } from '../services/auth'
 const Login = ({setUser}) => {
   let navigate = useNavigate()
   const initialState = {

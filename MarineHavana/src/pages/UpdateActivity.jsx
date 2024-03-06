@@ -19,7 +19,6 @@ const UpdateActivity = () => {
   useEffect(() => {
     Client.get("/activities")
       .then((response) => {
-        // console.log(response)
         setActivities(response.data)
       })
       .catch((error) => {
@@ -47,7 +46,6 @@ const UpdateActivity = () => {
       price: priceRef.current.value,
       image: imgRef.current.value,
     }).then((response) => {
-      // console.log(response)
       navigate("/activities")
     })
 

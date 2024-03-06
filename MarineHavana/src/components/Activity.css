@@ -8,7 +8,6 @@ article {
   background: #fff;
   transform-origin: center;
   transition: all 0.4s ease-in-out;
-  /* overflow: hidden; */
 }
 
 /* basic article elements styling */
@@ -50,15 +49,6 @@ article a:focus {
   outline: 1px dotted #000000;
 }
 
-/* article a .icon {
-    min-width: 24px;
-    width: 24px;
-    height: 24px;
-    margin-left: 5px;
-    transform: translateX(var(--link-icon-translate));
-    opacity: var(--link-icon-opacity);
-    transition: all 0.3s;
-  } */
 
 /* using the has() relational pseudo selector to update our custom properties */
 article:has(:hover, :focus) {
@@ -66,7 +56,6 @@ article:has(:hover, :focus) {
   --title-color: #000000;
   --link-icon-translate: 0;
   --link-icon-opacity: 1;
-  /* box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px; */
 }
 
 /************************ 
@@ -74,11 +63,9 @@ article:has(:hover, :focus) {
   **************************/
 
 .price {
-  /* padding: 48px 0; */
   font-family: 'Montserrat', sans-serif;
   font-size: 0.9rem;
   line-height: 1.6rem;
-  /* min-height: 100vh; */
   font-weight: 600; /* Change the font weight*/
 }
 
@@ -88,14 +75,10 @@ article:has(:hover, :focus) {
   margin-inline: auto;
   padding-inline: 24px;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  /* grid-template-rows: repeat(auto-fill, minmax(320px, 1fr)); */
   gap: 24px;
   padding-bottom: 60px;
 }
 
 .activities-background {
   background-image: linear-gradient(45deg, #000000, #181818);
-  /* height: 150%;
-  margin-bottom: 50px; */
-  /* background-color: red; */
 }

@@ -46,7 +46,6 @@ const ActivityDetails = (props) => {
     }
     act.userQty = 1
     props.setCart([...props.cart, act])
-    // navigate('/activities')
     setAddToCartMessage("ADDED TO CART!")
   }
 
@@ -96,7 +95,9 @@ const ActivityDetails = (props) => {
 
         <section className="reviews-section">
           <Reviews reviews={act.reviews} />
-          <AddReview activity_id={activity_id} ali={ali} />
+          {props.user.userType === "user" && (
+            <AddReview activity_id={activity_id} ali={ali} />
+          )}
         </section>
       </div>
     </div>
