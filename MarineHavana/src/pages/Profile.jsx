@@ -10,35 +10,27 @@ const Profiles = ({ user }) => {
   }
   return (
     <div>
-      <div class="card-container">
-        <div class="upper-container">
-          <div class="image-container">
+      <div className="card-container">
+        <div className="upper-container">
+          <div className="image-container">
             <img src={user.profilePic} alt="Profile picture" />
           </div>
         </div>
-        <div class="lower-container">
-          <div>
+        <div className="lower-container">
+          <button onClick={handleUpdate}>Edit</button>
             <h3>{user.name}</h3>
             <h4>{user.email}</h4>
-          </div>
-          <div>
-            <button onClick={handleUpdate}>UPDATE</button>
-          </div>
-          <div>
-            <section class="booking-section">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Bookings</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <Bookings user={user} />
-                </tbody>
-              </table>
-            </section>
-          </div>
-        </div>
+            </div>
+          <hr></hr>
+          <section className="booking-section">
+            <table>
+              <thead>
+                <h2>Bookings</h2>
+              </thead>
+              <Bookings user={user} />
+            </table>
+          </section>
+        
       </div>
     </div>
   )
