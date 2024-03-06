@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150vh;
-  padding-top: 50px;
+  height: 109vh;
+  margin-top: 5%;
 }
 
 .centered-content {
@@ -16,7 +16,7 @@
 }
 
 .detail-picture img {
-  width: 800px; /* Adjust the width of the image */
+  width: 65%; /* Adjust the width of the image */
   height: auto; /* Maintain the aspect ratio */
   padding-bottom: 30px;
 }
@@ -80,19 +80,6 @@
   margin-bottom: 10px;
 }
 
-.my-textarea {
-  width: 100%;
-  padding: 10px;
-  resize: vertical;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-.my-textarea {
-  width: 710px; /* Set the desired width */
-  height: 50px; /* Set the desired height */
-}
-
 /* .my-button {
   background-color: #4caf50;
   color: white;
@@ -129,6 +116,19 @@
   background-color: #ffffff;
 }
 
+.my-button:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.button {
+  margin-left: 20.4%;
+  margin-bottom: 1%;
+}
+
+.button button {
+  margin-left: 0.5%;
+}
+
 .searchButton:hover {
   background-color: #ffffff;
   color: #ffffff;
@@ -153,11 +153,7 @@
 }
 
 body {
-  margin: 0px;
-  padding: 0px;
-  background: #c2c2c2;
-  font-family: arial;
-  box-sizing: border-box;
+  background: #f7f7f7;
 }
 .card-container {
   width: 90%;
@@ -248,4 +244,17 @@ body {
 .booking-section th b,
 .booking-section td b {
   font-weight: bold;
+}
+
+.my-textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.my-textarea {
+  width: 710px; /* Set the desired width */
+  height: 50px; /* Set the desired height */
 }

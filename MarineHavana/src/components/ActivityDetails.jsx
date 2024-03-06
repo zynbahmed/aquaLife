@@ -1,18 +1,18 @@
-import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
-import Client from '../services/api'
-import { useNavigate } from 'react-router-dom'
+import { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import axios from "axios"
+import Client from "../services/api"
+import { useNavigate } from "react-router-dom"
 
-import Reviews from './Reviews'
-import AddReview from './AddReview'
+import Reviews from "./Reviews"
+import AddReview from "./AddReview"
 
-import '../Details.css'
+import "../Details.css"
 
 const ActivityDetails = (props) => {
   let navigate = useNavigate()
   let { activity_id } = useParams()
-  const [act, setAct] = useState('')
+  const [act, setAct] = useState("")
   const [addToCartMessage, setAddToCartMessage] = useState("")
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const ActivityDetails = (props) => {
 
   const handleSubmit = () => {
     Client.delete(`/activities/${activity_id}`, {}).then((response) => {
-      navigate('/activities')
+      navigate("/activities")
     })
   }
   const handleUpdate = () => {
@@ -53,16 +53,26 @@ const ActivityDetails = (props) => {
   return act ? (
     <div className="container1">
       <div className="centered-content">
-        {props.user.userType === 'admin' && (
-          <div>
-            <button onClick={handleSubmit}>DELETE</button>
-            <button onClick={handleUpdate}>UPDATE</button>
+        {props.user.userType === "admin" && (
+          <div className="button">
+            <button onClick={handleSubmit} className="my-button">
+              DELETE
+            </button>
+            <button onClick={handleUpdate} className="my-button">
+              UPDATE
+            </button>
           </div>
         )}
-        {props.user.userType === 'user' && (
-          <button onClick={() => addCart(act)} disabled={addToCartMessage}>
-          {addToCartMessage || "Add to Cart"}
-        </button>
+        {props.user.userType === "user" && (
+          <div className="button">
+            <button
+              onClick={() => addCart(act)}
+              disabled={addToCartMessage}
+              className="my-button"
+            >
+              {addToCartMessage || "Add to Cart"}
+            </button>
+          </div>
         )}
 
         <section>
