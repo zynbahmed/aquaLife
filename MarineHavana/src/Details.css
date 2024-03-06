@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 109vh;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
 .centered-content {
@@ -80,16 +80,7 @@
   margin-bottom: 10px;
 }
 
-/* .my-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-} */
-
-#update-user input[type="text"] {
+#update-user input[type='text'] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -97,10 +88,10 @@
   border-radius: 4px;
   color: #000000;
   background-color: #eaebf0;
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
-#update-user input[type="text"]::placeholder {
+#update-user input[type='text']::placeholder {
   color: #606167; /* Change the color of the placeholder text */
 }
 
@@ -121,7 +112,7 @@
   color: #ffffff;
 }
 .button {
-  margin-left: 20.4%;
+  margin-left: 25%;
   margin-bottom: 1%;
 }
 
@@ -134,9 +125,9 @@
   color: #ffffff;
 }
 
-#update-form input[type="text"],
-#update-form textarea[type="description"],
-#update-form input[type="number"] {
+#update-form input[type='text'],
+#update-form textarea[type='description'],
+#update-form input[type='number'] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -144,11 +135,11 @@
   border-radius: 4px;
   color: #000000;
   background-color: #eaebf0;
-  font-family: "Arial", sans-serif;
-  font-family: "Arial", sans-serif;
+  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 
-#centered-review textarea[type="description"]::placeholder {
+#centered-review textarea[type='description']::placeholder {
   color: #606167; /* Change the color of the placeholder text */
 }
 
@@ -189,7 +180,7 @@ body {
   background: #fff;
   padding: 0.8%;
   /* padding-top: 40px; */
-  margin-bottom: 20px;
+  margin-bottom: 3%;
 }
 
 .lower-container h3 {
@@ -207,22 +198,21 @@ body {
   font-weight: 900;
 }
 .lower-container button {
-  padding: 12px 20px;
-  background: #000000;
-  border: none;
-  color: white;
-  border-radius: 30px;
-  font-size: 12px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease-in;
+  margin-top: 10px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 2px solid rgb(0, 0, 0);
+  font-size: 0.9rem;
+  cursor: pointer;
+  height: 30px;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
   margin-left: 95%;
   margin-top: 0.2%;
 }
 .lower-container button:hover {
-  background: transparent;
-  color: #000000;
-  border: 2px solid #000000;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .booking-section table {

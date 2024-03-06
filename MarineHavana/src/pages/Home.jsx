@@ -19,11 +19,11 @@ const Home = () => {
         <div className="banner-text">
           <h1>Marine Havana</h1>
           <p>Dive into Adventure</p>
-          {facts.map((fact, index) => (
+          {/* {facts.map((fact, index) => (
             <h3 key={index}>
               {index === randNum ? `Fact:${fact.fact}` : null}
             </h3>
-          ))}
+          ))} */}
         </div>
       </main>
     </div>
