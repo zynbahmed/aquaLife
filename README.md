@@ -1,6 +1,6 @@
 # Marine Havana
 
-## 08/03/2024
+## 07/03/2024
 
 ### Created By:
 
@@ -22,31 +22,48 @@
 
 Marine Havana in this website, our focus is to allow user to experince the best of the water life, that can't be obtained in the standard form, in Marine Havana, we strive to allow people to connect with these water life through our experince that are above the and below the surface and people can book thier experince from our website, and the best way to remember your expeince is by buying from our sovenier shop!!
 
+#### The application is designed with two distinct user roles: 
+* ***Admin:***
+   - **Functionality:** Admins possess exclusive rights to add, edit, and delete activities.
+   - **Activities Management:** Complete control over activities details.
+
+* ***User:***
+   - **Functionality:** Users have a more focused set of capabilities, emphasizing interaction with content.
+   - **Viewing Details:** Users can explore detailed information about activities.
+   - **Booking Management:** Users are empowered to add activities to the cart and view their past bookings.
+   - **Review Addition:** Ability to contribute reviews, enriching the community engagement.
+   - **User Management:** Users are able to update their information.
+
+---
+### ***Getting Started***
+
+##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/6MV3yBdv/aqualife).
+##### The project was deployed and can be viewed [here]().
+
+---
+
+
 #### **_Technologies_**
+Front-end:
+* React
+  * Declarative, efficient JavaScript library for building user interfaces, emphasizing component-based architecture and reusability.
+* CSS
+  * Stylesheet language used to control the presentation and layout of HTML documents, enhancing the visual appeal and user experience of web pages.
 
-- Javascript
-- CSS
-- Express
-- React
-- VS Code
-- Mongoose
-- MongoDB
-- Node.Js
+Back-end:
+* JavaScript
+  * A versatile scripting language that adds interactivity to web pages. Executed on the client side, it enhances user interfaces and enables dynamic content.
+* Node.js
+  * Server-side JavaScript runtime, enables building scalable network applications with asynchronous, event-driven architecture and modules.
+* Express.js
+  * A fast and minimalist Node.js web application framework that simplifies server-side development, facilitating the creation of robust and scalable web applications.
+* MongoDB
+  * Database, stores data in flexible, JSON-like documents, scalable, and widely used for applications.
+* Mongoose
+  * An Object-Document Mapper for MongoDB and Node.js, providing a straightforward way to model and interact with MongoDB
 
-#### **_Screenshot_**
+  
+---
+### ***Credits***
 
-The ERD of the project consisting of 4 models
-
-![ERD](https://github.com/zynbahmed/aquaLife/assets/155875082/cc188cd2-a8fb-4886-b2b0-e66b00c027cb)
-
-
-The CHD of the react front-end displaying the pages and the components for each element that is going to be used
-
-
-![image](https://github.com/zynbahmed/aquaLife/assets/155875082/85643c11-4e99-47ec-9df9-519041a4fd54)
-
-### **_WireFrame_**
-![wireframe](https://github.com/zynbahmed/aquaLife/assets/155875082/3cc95104-9223-4d92-afe6-833633d8ad9a)
-
-
-#### **_HomePage_**
+[SEI-08 Lessons and Labs of Unit 3](https://github.com/SEI-08-Bahrain/class_wiki?tab=readme-ov-file)
