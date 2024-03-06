@@ -30,18 +30,20 @@ const AddReview = ({ activity_id, ali }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="content">Review:</label>
-        <textarea
-          id="content"
-          type="text"
-          onChange={handleChange}
-          value={review.content}
-          rows={8}
-        />
-        <button type="submit">Add Review</button>
-      </form>
-    </div>
+  <form className="my-form" onSubmit={handleSubmit}>
+    <label className="my-label" htmlFor="content"></label>
+    <textarea
+      className="my-textarea"
+      placeholder="add a review"
+      id="content"
+      type="text"
+      onChange={handleChange}
+      value={review.content}
+      rows={8}
+    />
+    <button className="my-button" type="submit">ADD REVIEW</button>
+  </form>
+</div>
   )
 }
 
