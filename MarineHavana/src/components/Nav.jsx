@@ -1,19 +1,19 @@
-import { NavLink, useLocation } from "react-router-dom"
+import { NavLink, useLocation } from 'react-router-dom'
 
 const Nav = ({ user, handleLogOut }) => {
   const location = useLocation()
 
-  let navbarClass = ""
-  let headerClass = ""
-  let textClass = ""
+  let navbarClass = ''
+  let headerClass = ''
+  let textClass = ''
 
-  if (location.pathname === "/") {
-    navbarClass = "home-navbar"
-    headerClass = "header"
+  if (location.pathname === '/') {
+    navbarClass = 'home-navbar'
+    headerClass = 'header'
   } else {
-    navbarClass = "about-navbar"
-    headerClass = "header2"
-    textClass = "header-text"
+    navbarClass = 'about-navbar'
+    headerClass = 'header2'
+    textClass = 'header-text'
   }
   let userOptions
   if (user) {
