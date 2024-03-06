@@ -102,7 +102,7 @@
   cursor: pointer;
 } */
 
-#update-user input[type='text'] {
+#update-user input[type="text"] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -110,10 +110,10 @@
   border-radius: 4px;
   color: #000000;
   background-color: #eaebf0;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-#update-user input[type='text']::placeholder {
+#update-user input[type="text"]::placeholder {
   color: #606167; /* Change the color of the placeholder text */
 }
 
@@ -134,9 +134,9 @@
   color: #ffffff;
 }
 
-#update-form input[type='text'],
-#update-form textarea[type='description'],
-#update-form input[type='number'] {
+#update-form input[type="text"],
+#update-form textarea[type="description"],
+#update-form input[type="number"] {
   width: 100%;
   padding: 15px;
   border: 1px solid #eaebf0;
@@ -144,11 +144,11 @@
   border-radius: 4px;
   color: #000000;
   background-color: #eaebf0;
-  font-family: 'Arial', sans-serif;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
+  font-family: "Arial", sans-serif;
 }
 
-#centered-review textarea[type='description']::placeholder {
+#centered-review textarea[type="description"]::placeholder {
   color: #606167; /* Change the color of the placeholder text */
 }
 
@@ -227,4 +227,25 @@ body {
   background: transparent;
   color: #000000;
   border: 2px solid #000000;
+}
+
+.booking-section table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.booking-section {
+  margin-top: 1%;
+  padding: 1%;
+}
+
+.booking-section th,
+.booking-section td {
+  padding: 10px;
+  text-align: left;
+}
+
+.booking-section th b,
+.booking-section td b {
+  font-weight: bold;
 }
