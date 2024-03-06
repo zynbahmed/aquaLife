@@ -1,15 +1,27 @@
 const avatars = [
   {
-    url: "https://static.vecteezy.com/system/resources/previews/005/293/961/original/cute-fish-cartoon-illustration-sea-animal-concept-free-vector.jpg",
-    alt: "Image description 1",
+    url: "https://i.pinimg.com/originals/40/f8/2c/40f82c349cffb65a55032547dabf1305.gif",
+    alt: "Turtle",
   },
   {
-    url: "https://c8.alamy.com/comp/2RFR8RM/kawaii-sea-dolphin-vector-illustration-sea-creatures-underwater-ilustration-2RFR8RM.jpg",
-    alt: "Image description 2",
+    url: "https://i.pinimg.com/originals/7b/8d/a8/7b8da80d10dfd99ec7068b9388fdd76a.png",
+    alt: "Dolphin",
   },
   {
-    url: "https://static.vecteezy.com/system/resources/thumbnails/008/596/789/small/cute-seahorse-with-air-bubbles-suitable-for-children-s-screen-printing-shirts-free-vector.jpg",
-    alt: "Image description 3",
+    url: "https://img.freepik.com/premium-vector/cute-seahorses-swimming-ocean-cartoon-vector-icon-illustration-animal-nature-icon-isolated_138676-5971.jpg",
+    alt: "Seahorse",
+  },
+  {
+    url: "https://img.freepik.com/premium-vector/cute-penguin-cartoon-vector-illustration_921448-1361.jpg",
+    alt: "Penguin",
+  },
+  {
+    url: "https://img.freepik.com/free-vector/cute-jellyfish-swimming-ocean-cartoon-vector-icon-illustration-animal-nature-icon-isolated-flat_138676-7012.jpg",
+    alt: "Jellyfish",
+  },
+  {
+    url: "https://tr.rbxcdn.com/38c6edcb50633730ff4cf39ac8859840/420/420/Hat/Png",
+    alt: "Default Image",
   },
 ]
 

@@ -1,6 +1,8 @@
 import Bookings from "../components/Bookings"
 import { useNavigate } from "react-router-dom"
 
+import "../Details.css"
+
 const Profiles = ({ user }) => {
   const navigate = useNavigate()
   const handleUpdate = () => {
@@ -10,8 +12,19 @@ const Profiles = ({ user }) => {
     <div>
       <div>
         <button onClick={handleUpdate}>UPDATE</button>
-        <h2>{user.name}</h2>
-        <h2>{user.email}</h2>
+        <section className="album-details">
+          <div className="picture">
+            <img src={user.profilePic} />
+          </div>
+          <div className="details-right">
+            <div className="detail">
+              <div className="label">Username:</div>
+              <div className="value">{user.name}</div>
+            </div>
+            <div className="label">E-mail:</div>
+            <div className="value">{user.email}</div>
+          </div>
+        </section>
       </div>
       <div>
         <h2>Bookings</h2>
