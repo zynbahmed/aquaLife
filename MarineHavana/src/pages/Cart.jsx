@@ -61,8 +61,8 @@ const Cart = ({ user, cart, setCart }) => {
               </div>
             ))}
             <div className="">
-              <h1>Total: {totalPrice()}</h1>
-              <button className="pricebutton" onClick={buy}>
+              <h1>Total Price: ${totalPrice()}</h1>
+              <button className="my-button" onClick={buy}>
                 BUY
               </button>
             </div>
