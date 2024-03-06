@@ -1,10 +1,7 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import Client from "../services/api"
-import { Navigate, useNavigate } from "react-router-dom"
-import Reviews from "./Reviews"
 
 const AddReview = ({ activity_id, ali }) => {
-  const navigate = useNavigate()
   const initialState = {
     content: "",
   }

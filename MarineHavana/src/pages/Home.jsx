@@ -1,11 +1,8 @@
 import videoBackground from "/images/qwert.mov"
-import facts from "../data/marineFacts"
 import sea from "../sea.mp3"
 
 const Home = () => {
-  // console.log(videoBackground)
   const randDec = Math.random() * 40
-  const randNum = Math.floor(randDec)
 
   return (
     <div className="container dark">
@@ -19,11 +16,6 @@ const Home = () => {
         <div className="banner-text">
           <h1>Marine Havana</h1>
           <p>Dive into Adventure</p>
-          {/* {facts.map((fact, index) => (
-            <h3 key={index}>
-              {index === randNum ? `Fact:${fact.fact}` : null}
-            </h3>
-          ))} */}
         </div>
       </main>
     </div>

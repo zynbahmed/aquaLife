@@ -19,7 +19,6 @@ const UpdateActivity = () => {
   useEffect(() => {
     Client.get("/activities")
       .then((response) => {
-        // console.log(response)
         setActivities(response.data)
       })
       .catch((error) => {
@@ -47,8 +46,7 @@ const UpdateActivity = () => {
       price: priceRef.current.value,
       image: imgRef.current.value,
     }).then((response) => {
-      // console.log(response)
-      navigate("/activities")
+      navigate(`/activities/${activity_id}`)
     })
 
     titleRef.current.value = null
@@ -74,7 +72,7 @@ const UpdateActivity = () => {
                 type="text"
                 id="title"
                 ref={titleRef}
-                placeholder={'title'}
+                placeholder={"title"}
               />
             </div>
             <div>
@@ -83,7 +81,7 @@ const UpdateActivity = () => {
                 type="description"
                 id="description"
                 defaultValue={activityDetails.description}
-                placeholder={'description'}
+                placeholder={"description"}
                 cols="30"
                 rows="10"
                 ref={desRef}
@@ -96,7 +94,7 @@ const UpdateActivity = () => {
                 id="price"
                 defaultValue={activityDetails.price}
                 ref={priceRef}
-                placeholder={'price'}
+                placeholder={"price"}
               />
             </div>
             <div>
@@ -106,7 +104,7 @@ const UpdateActivity = () => {
                 id={"image"}
                 defaultValue={activityDetails.image}
                 ref={imgRef}
-                placeholder={'image'}
+                placeholder={"image"}
               />
             </div>
             <button type="submit">Update</button>

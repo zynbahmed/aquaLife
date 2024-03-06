@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'
-import { useRef, useState, useEffect } from 'react'
+import { useRef } from 'react'
 import Client from '../services/api'
 
 const CreateActivity = (props) => {
@@ -17,16 +17,12 @@ const CreateActivity = (props) => {
       price: priceRef.current.value,
       image: imgRef.current.value
     }).then((response) => {
-      // console.log(response)
       navigate('/activities')
     })
     titleRef.current.value = null
     descRef.current.value = null
     priceRef.current.value = null
     imgRef.current.value = null
-    // props.addActivity()
-    // console.log(newActivity)
-    // navigate('/activities')
   }
 
   const newActivity = props.newActivity

@@ -1,5 +1,4 @@
 import Client from "../services/api"
-import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
 import Search from "../components/Search"
@@ -37,7 +36,6 @@ const Activities = ({ user }) => {
 
   const getActivity = async () => {
     let allList = await axios.get("http://localhost:3001/activities")
-    // console.log(allList)
     setEvent(allList.data)
   }
 

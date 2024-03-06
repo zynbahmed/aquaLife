@@ -1,8 +1,6 @@
 import Client from '../services/api'
 import '../Cart.css'
-// import '../components/Activity.css'
 
-import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Cart = ({ user, cart, setCart }) => {

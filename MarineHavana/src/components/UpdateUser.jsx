@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import avatars from '../data/avatars'
 import Client from '../services/api'
 
@@ -17,7 +17,6 @@ const UpdateUser = ({ user, setUser }) => {
   useEffect(() => {
     Client.get('/Auth')
       .then((response) => {
-        // console.log(response)
         setUser(response.data)
       })
       .catch((error) => {
@@ -37,7 +36,6 @@ const UpdateUser = ({ user, setUser }) => {
         name: nameRef.current.value,
         email: emailRef.current.value
       }).then((response) => {
-        // console.log(response)
         navigate('/Profile')
       })
       await setUser(updatedUser)

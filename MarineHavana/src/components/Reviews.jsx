@@ -1,7 +1,7 @@
 const Reviews = ({ reviews }) => {
   return reviews && reviews.length > 0 ? (
     <div>
-      <h3 className="reviews-title">customer reviews</h3>
+      <h3 className="reviews-title">Customer Reviews</h3>
       {reviews.map((review) => ( 
         <div className="centered-review" key={review._id}>
         <h3 className="review-content"> {review.content}</h3>
