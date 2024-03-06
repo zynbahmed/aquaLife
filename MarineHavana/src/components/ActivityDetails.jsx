@@ -13,7 +13,7 @@ const ActivityDetails = (props) => {
   let navigate = useNavigate()
   let { activity_id } = useParams()
   const [act, setAct] = useState("")
-  const [item, setItems] = useState([])
+  const [addToCartMessage, setAddToCartMessage] = useState("")
 
   useEffect(() => {
     const activityDetails = async () => {
@@ -46,7 +46,8 @@ const ActivityDetails = (props) => {
     }
     act.userQty = 1
     props.setCart([...props.cart, act])
-    navigate("/activities")
+    // navigate("/activities")
+    setAddToCartMessage("Added to cart!")
   }
 
   return act ? (
@@ -57,10 +58,12 @@ const ActivityDetails = (props) => {
           <button onClick={handleUpdate}>UPDATE</button>
         </div>
       )}
-{props.user.userType === "user" && (
-        <button onClick={() => addCart(act)}>Add to Cart</button>
+      {props.user.userType === "user" && (
+        <button onClick={() => addCart(act)} disabled={addToCartMessage}>
+          {addToCartMessage || "Add to Cart"}
+        </button>
       )}
-      
+
       <section className="album-details">
         <div className="picture">
           <img src={act.image} alt="" />
