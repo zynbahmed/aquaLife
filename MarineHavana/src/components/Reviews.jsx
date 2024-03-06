@@ -1,16 +1,14 @@
 const Reviews = ({ reviews }) => {
-  return (
+  return reviews && reviews.length > 0 ? (
     <div>
-      {reviews ? (
-        <p>No reviews available</p>
-      ) : (
-        reviews.map((review) => (
-          <div key={review._id}>
-            <h3> Contant: {review.content}</h3>
-          </div>
-        ))
-      )}
+      {reviews.map((review) => (
+        <div key={review._id}>
+          <h3>Content: {review.content}</h3>
+        </div>
+      ))}
     </div>
+  ) : (
+    <p>No reviews available</p>
   )
 }
 export default Reviews

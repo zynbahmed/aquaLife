@@ -23,18 +23,22 @@ const Nav = ({ user, handleLogOut }) => {
           <NavLink to="/" className={`nav-link ${navbarClass}`}>
             Home
           </NavLink>
-          <NavLink to="/Profile" className={`nav-link ${navbarClass}`}>
-            Profile
-          </NavLink>
+          {user.userType === "user" && (
+            <NavLink to="/Profile" className={`nav-link ${navbarClass}`}>
+              Profile
+            </NavLink>
+          )}
           <NavLink to="/activities" className={`nav-link ${navbarClass}`}>
             Activities
           </NavLink>
           <NavLink to="/About" className={`nav-link ${navbarClass}`}>
             About
           </NavLink>
-          <NavLink to="/cart" className={`nav-link ${navbarClass}`}>
-            Cart
-          </NavLink>
+          {user.userType === "user" && (
+            <NavLink to="/cart" className={`nav-link ${navbarClass}`}>
+              Cart
+            </NavLink>
+          )}
           <NavLink
             onClick={handleLogOut}
             to="/"

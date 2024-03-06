@@ -1,14 +1,14 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import Client from '../services/api'
-import Activities from '../pages/Activities'
+import axios from "axios"
+import { useState, useEffect } from "react"
+import Client from "../services/api"
+import Activities from "../pages/Activities"
 
 const Bookings = ({ user }) => {
   const [book, setBook] = useState([])
 
   useEffect(() => {
     const details = async () => {
-      let selected = await Client.get('/Auth')
+      let selected = await Client.get("/Auth")
       setBook(selected.data)
       console.log(selected)
     }
@@ -18,17 +18,19 @@ const Bookings = ({ user }) => {
   console.log(book)
   return (
     <div>
-      <h1>{user.name}</h1>
       {book?.bookings?.length > 0 &&
         book.bookings.map((list) => (
-          <div>
-            <h2>{list.totalPrice}</h2>
+          <tr>
             {list.activities.map((act) => (
-              <div>
-                <h1>{act.title}</h1>
-              </div>
+              <td>
+                <b>Title: </b>
+                {act.title}
+              </td>
             ))}
-          </div>
+            <td>
+              <b>Total Price: </b>${list.totalPrice}
+            </td>
+          </tr>
         ))}
       <h2></h2>
     </div>

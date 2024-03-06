@@ -1,4 +1,4 @@
-/* .album-details {
+.album-details {
   background-color: #fafdff;
   padding: 20px;
   margin-bottom: 20px;
@@ -43,28 +43,13 @@
   color: #211423;
 }
 
-.reviews-section {
+.reviews-section,
+.songs-section {
   background-color: #fafdff;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-button[type="submit"],
-button {
-  background-color: #5e3193;
-  color: #fafdff;
-  border: none;
-  border-radius: 5px;
-  padding: 8px 15px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button[type="submit"]:hover,
-button:hover {
-  background-color: #211423;
 }
 
 .reviews-section form {
@@ -142,4 +127,20 @@ button:hover {
 
 .reviews-section form select {
   margin-right: 20px;
-} */
+}
+
+.booking-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-section th,
+.booking-section td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  text-align: left;
+}
+
+.booking-section th {
+  font-weight: bold;
+}

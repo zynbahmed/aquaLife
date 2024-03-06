@@ -51,9 +51,16 @@ const ActivityDetails = (props) => {
 
   return act ? (
     <div>
-      <button onClick={handleSubmit}>DELETE</button>
-      <button onClick={handleUpdate}>UPDATE</button>
-      <button onClick={() => addCart(act)}>Add to Cart</button>
+      {props.user.userType === "admin" && (
+        <div>
+          <button onClick={handleSubmit}>DELETE</button>
+          <button onClick={handleUpdate}>UPDATE</button>
+        </div>
+      )}
+{props.user.userType === "user" && (
+        <button onClick={() => addCart(act)}>Add to Cart</button>
+      )}
+      
       <section className="album-details">
         <div className="picture">
           <img src={act.image} alt="" />

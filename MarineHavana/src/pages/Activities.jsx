@@ -1,12 +1,12 @@
-import Client from '../services/api'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
-import Search from '../components/Search'
-import axios from 'axios'
-import Activity from '../components/Activity'
-import '../components/Activity.css'
-const Activities = () => {
+import Client from "../services/api"
+import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useEffect, useState, useRef } from "react"
+import Search from "../components/Search"
+import axios from "axios"
+import Activity from "../components/Activity"
+import "../components/Activity.css"
+const Activities = ({ user }) => {
   let nav = useNavigate()
 
   const searchRef = useRef(null)
@@ -16,7 +16,7 @@ const Activities = () => {
   const [event, setEvent] = useState([])
 
   useEffect(() => {
-    Client.get('activities')
+    Client.get("activities")
       .then((response) => {
         setActivity(response.data)
       })
@@ -36,7 +36,7 @@ const Activities = () => {
   }
 
   const getActivity = async () => {
-    let allList = await axios.get('http://localhost:3001/activities')
+    let allList = await axios.get("http://localhost:3001/activities")
     // console.log(allList)
     setEvent(allList.data)
   }
@@ -46,7 +46,7 @@ const Activities = () => {
   }, [])
 
   const handleCreate = () => {
-    nav('/createActivity')
+    nav("/createActivity")
   }
 
   return (
@@ -64,8 +64,14 @@ const Activities = () => {
           <Activity key={event._id} event={event} />
         </>
       )}
-      <h1 className='create-surface-activity'>Create Surface Activity</h1>
-      <button className="create-surface-button" onClick={handleCreate}>CREATE ACTIVITY</button>
+      {user.userType === "admin" && (
+        <div>
+          <h1 className="create-surface-activity">Create Surface Activity</h1>
+          <button className="create-surface-button" onClick={handleCreate}>
+            CREATE ACTIVITY
+          </button>
+        </div>
+      )}
     </div>
   )
 }
