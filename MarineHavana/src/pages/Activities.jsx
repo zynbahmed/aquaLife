@@ -66,7 +66,7 @@ const Activities = ({ user }) => {
       )}
       {user.userType === "admin" && (
         <div>
-          <h1 className="create-surface-activity">Create Surface Activity</h1>
+          <h1 className="create-surface-activity">Create Activity</h1>
           <button className="create-surface-button" onClick={handleCreate}>
             CREATE ACTIVITY
           </button>

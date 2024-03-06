@@ -17,7 +17,7 @@ const Profiles = ({ user }) => {
           </div>
         </div>
         <div className="lower-container">
-          <button onClick={handleUpdate}>Edit</button>
+          <button onClick={handleUpdate}>EDIT</button>
             <h3>{user.name}</h3>
             <h4>{user.email}</h4>
             </div>

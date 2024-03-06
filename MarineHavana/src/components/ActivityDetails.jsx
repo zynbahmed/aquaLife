@@ -47,7 +47,7 @@ const ActivityDetails = (props) => {
     act.userQty = 1
     props.setCart([...props.cart, act])
     // navigate('/activities')
-    setAddToCartMessage("Added to cart!")
+    setAddToCartMessage("ADDED TO CART!")
   }
 
   return act ? (
@@ -70,7 +70,7 @@ const ActivityDetails = (props) => {
               disabled={addToCartMessage}
               className="my-button"
             >
-              {addToCartMessage || "Add to Cart"}
+              {addToCartMessage || "ADD TO CART"}
             </button>
           </div>
         )}

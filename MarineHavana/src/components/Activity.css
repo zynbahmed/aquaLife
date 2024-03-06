@@ -43,7 +43,7 @@ article a {
   align-items: center;
   text-decoration: none;
   color: #979797;
-font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 article a:focus {
@@ -82,7 +82,6 @@ article:has(:hover, :focus) {
   font-weight: 600; /* Change the font weight*/
 }
 
-
 .articles {
   display: grid;
   max-width: 1200px;
@@ -91,9 +90,12 @@ article:has(:hover, :focus) {
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   /* grid-template-rows: repeat(auto-fill, minmax(320px, 1fr)); */
   gap: 24px;
+  padding-bottom: 60px;
 }
 
 .activities-background {
   background-image: linear-gradient(45deg, #000000, #181818);
+  /* height: 150%;
+  margin-bottom: 50px; */
   /* background-color: red; */
 }
