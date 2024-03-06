@@ -28,7 +28,7 @@ figure {
 }
 
 article img {
-  max-width: 100%;
+  max-width: 115%;
   transform-origin: center;
   transform: scale(var(--img-scale));
   transition: transform 0.4s ease-in-out;
@@ -42,7 +42,8 @@ article a {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #000000;
+  color: #979797;
+font-size: 0.8rem;
 }
 
 article a:focus {
@@ -78,7 +79,9 @@ article:has(:hover, :focus) {
   font-size: 0.9rem;
   line-height: 1.6rem;
   /* min-height: 100vh; */
+  font-weight: 600; /* Change the font weight*/
 }
+
 
 .articles {
   display: grid;
