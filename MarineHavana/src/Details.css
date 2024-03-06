@@ -1,4 +1,4 @@
-/* .album-details {
+.album-details {
   background-color: #fafdff;
   padding: 20px;
   margin-bottom: 20px;
@@ -43,7 +43,8 @@
   color: #211423;
 }
 
-.reviews-section, .songs-section {
+.reviews-section,
+.songs-section {
   background-color: #fafdff;
   padding: 20px;
   margin-bottom: 20px;

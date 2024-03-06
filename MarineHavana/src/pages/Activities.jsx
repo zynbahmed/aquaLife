@@ -64,8 +64,14 @@ const Activities = ({ user }) => {
           <Activity key={event._id} event={event} />
         </>
       )}
-      <h1 className='create-surface-activity'>Create Surface Activity</h1>
-      <button className="create-surface-button" onClick={handleCreate}>CREATE ACTIVITY</button>
+      {user.userType === "admin" && (
+        <div>
+          <h1 className="create-surface-activity">Create Surface Activity</h1>
+          <button className="create-surface-button" onClick={handleCreate}>
+            CREATE ACTIVITY
+          </button>
+        </div>
+      )}
     </div>
   )
 }
