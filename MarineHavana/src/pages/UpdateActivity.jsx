@@ -65,45 +65,48 @@ const UpdateActivity = () => {
               Update {activityDetails.title} Activity
             </h1>
             <p class="account-description">
-              Enter the title, description and the price of your activity to
-              create your activity
+              Update the title, description and the price of your activity below
             </p>
             <div>
-              <label htmlFor="title">Title:</label>
+              <label htmlFor="title"></label>
               <input
                 defaultValue={activityDetails.title}
                 type="text"
                 id="title"
                 ref={titleRef}
+                placeholder={'title'}
               />
             </div>
             <div>
-              <label htmlFor="description">Description:</label>
+              <label htmlFor="description"></label>
               <textarea
-                type="text"
+                type="description"
                 id="description"
                 defaultValue={activityDetails.description}
+                placeholder={'description'}
                 cols="30"
                 rows="10"
                 ref={desRef}
               ></textarea>
             </div>
             <div>
-              <label htmlFor="price">Price:</label>
+              <label htmlFor="price"></label>
               <input
                 type="text"
                 id="price"
                 defaultValue={activityDetails.price}
                 ref={priceRef}
+                placeholder={'price'}
               />
             </div>
             <div>
-              <label htmlFor="image">Image:</label>
+              <label htmlFor="image"></label>
               <input
                 type="text"
                 id={"image"}
                 defaultValue={activityDetails.image}
                 ref={imgRef}
+                placeholder={'image'}
               />
             </div>
             <button type="submit">Update</button>

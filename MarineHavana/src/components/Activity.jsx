@@ -15,9 +15,10 @@ const Activity = ({ event }) => {
             <div className="activity-card">
               <div className="article-body">
                 <h1>{ev.title}</h1>
-                <p className="price">{ev.price}</p>
+                <p className="price">${ev.price}</p>
                 <Link to={ev._id} className="read-more">
-                  <div>Read more</div>
+                  <div>
+                Read more</div>
                 </Link>
               </div>
             </div>
