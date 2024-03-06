@@ -1,12 +1,12 @@
-import Client from '../services/api'
-import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
-import Search from '../components/Search'
-import axios from 'axios'
-import Activity from '../components/Activity'
-import '../components/Activity.css'
-const Activities = () => {
+import Client from "../services/api"
+import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useEffect, useState, useRef } from "react"
+import Search from "../components/Search"
+import axios from "axios"
+import Activity from "../components/Activity"
+import "../components/Activity.css"
+const Activities = ({ user }) => {
   let nav = useNavigate()
 
   const searchRef = useRef(null)
@@ -16,7 +16,7 @@ const Activities = () => {
   const [event, setEvent] = useState([])
 
   useEffect(() => {
-    Client.get('activities')
+    Client.get("activities")
       .then((response) => {
         setActivity(response.data)
       })
@@ -36,7 +36,7 @@ const Activities = () => {
   }
 
   const getActivity = async () => {
-    let allList = await axios.get('http://localhost:3001/activities')
+    let allList = await axios.get("http://localhost:3001/activities")
     // console.log(allList)
     setEvent(allList.data)
   }
@@ -46,7 +46,7 @@ const Activities = () => {
   }, [])
 
   const handleCreate = () => {
-    nav('/createActivity')
+    nav("/createActivity")
   }
 
   return (
@@ -64,7 +64,9 @@ const Activities = () => {
           <Activity key={event._id} event={event} />
         </>
       )}
-      <button onClick={handleCreate}>Create Surface Activity</button>
+      {user.userType === "admin" && (
+        <button onClick={handleCreate}>Create a New Activity</button>
+      )}
     </div>
   )
 }
