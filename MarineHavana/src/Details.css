@@ -120,6 +120,11 @@
   margin-left: 0.5%;
 }
 
+.button button:disabled{
+  background-color: #000000;
+  color: #ffffff;
+}
+
 .searchButton:hover {
   background-color: #ffffff;
   color: #ffffff;

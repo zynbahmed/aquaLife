@@ -46,7 +46,7 @@ const ActivityDetails = (props) => {
     }
     act.userQty = 1
     props.setCart([...props.cart, act])
-    setAddToCartMessage("ADDED TO CART!")
+    setAddToCartMessage("ADDED TO CART")
   }
 
   return act ? (
