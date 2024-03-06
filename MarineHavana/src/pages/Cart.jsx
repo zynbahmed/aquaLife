@@ -33,20 +33,20 @@ const Cart = ({ user, cart, setCart }) => {
 
   return (
     <div className="cart-background">
-      <section className=" ">
+      <section className="cart-section">
         {/* Conditionally render cart details based on cart length */}
         {cart.length > 0 ? (
           <article className="flex">
             {cart.map((book) => (
               <div className="" key={book._id}>
-                <figure>
+                <figure className="figure">
                   <img src={book.image} alt="" />
                 </figure>
                 <div>
                   <div>
                     <div>
-                      <h1>{book.title}</h1>
-                      <p className="">Cost: ${book.price}</p>
+                      <h1 className="h1-cart">{book.title}</h1>
+                      <p className="p-cart">Cost: ${book.price}</p>
                       <label htmlFor="quantity">Quantity:</label>
                       <input
                         type="number"
@@ -68,7 +68,7 @@ const Cart = ({ user, cart, setCart }) => {
             </div>
           </article>
         ) : (
-          <h2>Cart Empty</h2>
+          <h2 className="h2-cart">Cart Empty</h2>
         )}
       </section>
     </div>

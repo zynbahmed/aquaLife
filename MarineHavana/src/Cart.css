@@ -1,0 +1,85 @@
+/* Background for the entire cart section */
+.cart-background {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px;
+}
+
+/* Container for the cart content */
+.cart-section {
+  max-width: 1000px;
+  margin: 0 auto; /* Center the content horizontally */
+  display: flex; /* Allow stacking items next to each other */
+  flex-wrap: wrap; /* Wrap items in multiple rows if needed */
+}
+
+/* Individual cart item container */
+.flex > div {
+  flex: 1 0 300px; /* Set minimum width and allow flexible growth */
+  margin: 10px;
+  border: 1px solid #ddd; /* Light gray border */
+  padding: 10px; /* Add some padding inside */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Book image styling */
+.figure img {
+  width: 100%; /* Fit image to container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Book details section */
+.flex > div div {
+  margin-top: 10px;
+}
+
+/* Book title */
+.h1-cart {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* Book price */
+.p-cart {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Quantity label and input */
+.label-cart {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type='number'] {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+/* Total price section */
+.flex > div:last-child {
+  text-align: center;
+}
+
+/* Total price text */
+.flex > div:last-child h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Buy button */
+.pricebutton {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
+/* Cart empty message */
+.h2-cart {
+  text-align: center;
+  margin-top: 20px;
+}
