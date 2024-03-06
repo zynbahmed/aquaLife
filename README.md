@@ -39,6 +39,7 @@ Marine Havana in this website, our focus is to allow user to experince the best 
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/6MV3yBdv/aqualife).
 ##### The project was deployed and can be viewed [here]().
+##### For the back-end repo, it can be viewed [here](https://github.com/zynbahmed/aquaLife-backend).
 
 ---
 
