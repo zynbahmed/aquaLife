@@ -1,99 +1,155 @@
-.reviews-section form {
-  margin-bottom: 20px;
-}
-
-.reviews-section label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-.reviews-section input,
-.reviews-section select {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: large;
-}
-
-.reviews-section button {
-  font-size: larger;
-}
-
-.reviews-section h3 {
-  margin-bottom: 10px;
-}
-
-.reviews-section .review-list {
-  list-style: none;
-  padding: 0;
-  color: #211423;
-  font-size: larger;
-  font-weight: bolder;
-}
-
-.reviews-section .review-list .review {
+.container1 {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  height: 150vh;
+  padding-top: 50px;
 }
 
-.reviews-section .review-list .review img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.reviews-section .review-list .review-content {
-  flex: 1;
-}
-
-.reviews-section .review-list .review-content p {
-  margin: 0;
-}
-
-.reviews-section .review-list .username {
-  font-weight: lighter;
-  color: #14171a;
-  font-size: smaller;
-  font-family: monospace;
-}
-
-.reviews-section form {
-  display: flex;
-  align-items: center;
-}
-
-.reviews-section form label {
-  margin-right: 10px;
-}
-
-.reviews-section form select {
-  margin-right: 20px;
-}
-
-.booking-section table {
-  width: 100%;
-  table-layout: fixed;
-}
-
-.booking-section {
-  margin-top: 1%;
-  padding: 1%;
-}
-
-.booking-section th,
-.booking-section td {
-  padding: 10px; 
+.centered-content {
   text-align: left;
 }
 
-.booking-section th b,
-.booking-section td b {
+.detail-picture {
+  display: flex;
+  justify-content: center;
+}
+
+.detail-picture img {
+  width: 800px; /* Adjust the width of the image */
+  height: auto; /* Maintain the aspect ratio */
+  padding-bottom: 30px;
+}
+
+.detail-title {
+  font-size: 40px;
+  font-weight: 700;
+  padding-left: 360px;
+  padding-right: 360px;
+  padding-bottom: 10px;
+}
+
+.details-description {
+  font-size: 15px;
+  font-weight: 21px;
+  padding-left: 360px;
+  padding-right: 360px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+}
+
+.price-detail {
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.price-label {
+  margin-right: 10px;
+}
+
+.reviews-title {
+  padding-left: 360px;
+  text-align: left;
+  font-size: 1.5rem;
   font-weight: bold;
+}
+
+.centered-review {
+  padding-left: 360px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: center;
+}
+
+.review-content {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* detail form  */
+.my-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-label {
+  margin-bottom: 10px;
+}
+
+.my-textarea {
+  width: 100%;
+  padding: 10px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.my-textarea {
+  width: 710px; /* Set the desired width */
+  height: 50px; /* Set the desired height */
+}
+
+/* .my-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
+
+#update-user input[type='text'] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #eaebf0;
+  border-bottom: 1px solid #eaebf0;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #eaebf0;
+  font-family: 'Arial', sans-serif;
+}
+
+#update-user input[type='text']::placeholder {
+  color: #606167; /* Change the color of the placeholder text */
+}
+
+.my-button {
+  margin-top: 10px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 2px solid rgb(0, 0, 0);
+  font-size: 0.9rem;
+  cursor: pointer;
+  height: 30px;
+  color: rgb(0, 0, 0);
+  background-color: #ffffff;
+}
+
+.searchButton:hover {
+  background-color: #ffffff;
+  color: #ffffff;
+}
+
+#update-form input[type='text'],
+#update-form textarea[type='description'],
+#update-form input[type='number'] {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #eaebf0;
+  border-bottom: 1px solid #eaebf0;
+  border-radius: 4px;
+  color: #000000;
+  background-color: #eaebf0;
+  font-family: 'Arial', sans-serif;
+  font-family: 'Arial', sans-serif;
+}
+
+#centered-review textarea[type='description']::placeholder {
+  color: #606167; /* Change the color of the placeholder text */
 }
 
 body {
