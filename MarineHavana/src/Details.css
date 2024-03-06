@@ -43,7 +43,7 @@
   color: #211423;
 }
 
-.reviews-section {
+.reviews-section, .songs-section {
   background-color: #fafdff;
   padding: 20px;
   margin-bottom: 20px;
@@ -142,4 +142,20 @@ button:hover {
 
 .reviews-section form select {
   margin-right: 20px;
+}
+
+.booking-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.booking-section th,
+.booking-section td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+  text-align: left;
+}
+
+.booking-section th {
+  font-weight: bold;
 }

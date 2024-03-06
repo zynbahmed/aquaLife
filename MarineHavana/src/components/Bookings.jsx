@@ -20,15 +20,17 @@ const Bookings = ({ user }) => {
     <div>
       {book?.bookings?.length > 0 &&
         book.bookings.map((list) => (
-          <div>
-            <h2>Activities:</h2>
+          <tr>
             {list.activities.map((act) => (
-              <div>
-                <h3>{act.title}</h3>
-              </div>
+              <td>
+                <b>Title: </b>
+                {act.title}
+              </td>
             ))}
-            <h3>Total Price: ${list.totalPrice}</h3>
-          </div>
+            <td>
+              <b>Total Price: </b>${list.totalPrice}
+            </td>
+          </tr>
         ))}
       <h2></h2>
     </div>

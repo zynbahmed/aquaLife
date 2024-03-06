@@ -26,14 +26,22 @@ const Profiles = ({ user }) => {
           </div>
         </section>
       </div>
-      <div>
-        <h2>Bookings</h2>
-        {user.bookings ? (
-          <Bookings user={user} />
-        ) : (
-          <h3>No Booking has been made!</h3>
-        )}
-      </div>
+      <section class="booking-section">
+        <table>
+          <thead>
+            <tr>
+              <th>Bookings</th>
+            </tr>
+          </thead>
+          {user.bookings ? (
+            <tbody>
+              <Bookings user={user} />
+            </tbody>
+          ) : (
+            <h5>No Booking has been made!</h5>
+          )}
+        </table>
+      </section>
     </div>
   )
 }
