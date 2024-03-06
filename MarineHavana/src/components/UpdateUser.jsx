@@ -80,21 +80,21 @@ const UpdateUser = ({ user, setUser }) => {
               ))}
             </div>
             <div>
-              <label htmlFor="name">Name:</label>
               <input
                 defaultValue={user.name}
                 type="text"
                 id="name"
                 ref={nameRef}
+                placeholder={'Username'}
               />
             </div>
             <div>
-              <label htmlFor="email">E-mail:</label>
               <input
                 type="text"
                 id="email"
                 defaultValue={user.email}
                 ref={emailRef}
+                placeholder={'E-mail'}
               />
             </div>
             <button type="submit">Update</button>
