@@ -30,7 +30,7 @@ const Registration = () => {
   }
 
   return (
-    <div className="background-image">
+    <div className="background-image5">
       <section id="update-form">
         <h1 class="account-title">Create Your Account</h1>
         <p class="account-description">
