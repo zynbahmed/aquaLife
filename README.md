@@ -20,7 +20,7 @@
 
 #### **_Description_**
 
-Marine Havana in this website, our focus is to allow user to experince the best of the water life, that can't be obtained in the standard form, in Marine Havana, we strive to allow people to connect with these water life through our experince that are above the and below the surface and people can book thier experince from our website, and the best way to remember your expeince is by buying from our sovenier shop!!
+Marine Havana in this website, our focus is to allow user to experince the best of the water life, that can't be obtained in the standard form, in Marine Havana, we strive to allow people to connect with these water life through our experince that are above the and below the surface and people can book thier experince from our website, the website allow users to create activities which is exclusive for admin users, and people who are would like to practice would be able to do so with the standard cases.
 
 #### The application is designed with two distinct user roles: 
 * ***Admin:***
